@@ -8,6 +8,7 @@ console.log("Server starting up... ( ͡° ͜ʖ ͡°) MINZIG")
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var counter = 0;
 
 var app = express();
 fetcher.start();
@@ -43,4 +44,4 @@ app.use(function(err, req, res, next) {
 
 app.listen(3000);
 
-module.exports = app;
+module.exports = app, counter;
