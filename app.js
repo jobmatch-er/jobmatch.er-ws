@@ -1,31 +1,45 @@
+console.log("Server starting up... ( ͡° ͜ʖ ͡°) MINZIG")
 var createError = require('http-errors');
 var express = require('express');
+var logger = require('morgan')
 var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
 var fetcher = require('./fetcher.js');
-console.log("Server starting up... ( ͡° ͜ʖ ͡°) MINZIG")
+const passport = require('passport');
+var flash = require('connect-flash');
+var bodyParser = require('body-parser')
+var ppconfig = require('./config/passport')
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var counter = 0;
+var profileRouter = require('./routes/profile');
+var loginRouter = require('./routes/login');
+var registerRouter = require('./routes/register');
+var matchingRouter = require('./routes/matching');
+var contactRouter = require('./routes/contact');
 
 var app = express();
 fetcher.start();
 
+app.use(session({ cookie: { maxAge: 60000 }, 
+  secret: 'yeet',
+  resave: false, 
+  saveUninitialized: false}));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(flash());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
+ppconfig(passport);
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/login', usersRouter);
+app.use('/profile', profileRouter);
+app.use('/login', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -45,4 +59,4 @@ app.use(function(err, req, res, next) {
 
 app.listen(3000);
 
-module.exports = app, counter;
+module.exports = app;

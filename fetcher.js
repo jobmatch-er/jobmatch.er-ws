@@ -1,9 +1,11 @@
 const WebSocket = require('ws');
 var HOST = "ws://0.tcp.ngrok.io"
-var PORT = "10481"
-
+var PORT = "13419"
+var counter = 0;
+var pendingRes = [];
+var connection;
 var start = function () {
-    const connection = new WebSocket(HOST + ":" + PORT)
+    connection = new WebSocket(HOST + ":" + PORT)
 
     connection.on('open', function open() {
         console.log("CONNECTION ESTABLISHED -> " + HOST)  
@@ -14,15 +16,45 @@ var start = function () {
     })
 
     connection.on('message', function message(data) {
-        console.log(data)
+        console.log(data.toString())
+        if(reqInvalid(data)){
+            var cb = pendingRes[getID(data)]
+            cb.call(getResult(data), null)
+        } else {
+            var cb = pendingRes[getID(data)]
+            cb.call(null, getResult(data))
+        }
+       
     })
     
 }
 
-function sendQuery(query, id){
-    waitForSocketConnection(ws, function (query, id){
-        ws.send(id + " query " + query)
+
+function sendQuery(query, callback){
+    waitForSocketConnection(connection, function (){
+        console.log(counter + " query " + query.toString().replace(/ /g, "_/"));
+        connection.send(counter + " query " + query.toString().replace(/ /g, "_/"));
+        pendingRes.push(callback);
     })
+    counter++;
+}
+
+function reqInvalid(data){
+    if(getID(data).startsWith("#")){
+        return true
+    } else {
+        return false
+    }
+}
+
+function getResult(data) {
+    var arr = data.split(" ");
+    return arr[2]
+}
+
+function getID(data){
+    var arr = data.split(" ");
+    return arr[0]
 }
 
 function waitForSocketConnection(socket, callback){
@@ -41,5 +73,7 @@ function waitForSocketConnection(socket, callback){
         }, 5); // wait 5 milisecond for the connection...
 }
 module.exports = {
-    start
+    start,
+    sendQuery,
+    getResult
 }
