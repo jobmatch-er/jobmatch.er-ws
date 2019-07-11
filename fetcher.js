@@ -1,55 +1,48 @@
-const WebSocket = require('ws');
-var HOST = "ws://0.tcp.ngrok.io"
-var PORT = "11754"
-var counter = 0;
-var pendingRes = [];
-var connection;
-var start = function () {
-    connection = new WebSocket(HOST + ":" + PORT)
+const WebSockets_Callback = require('wscb');
+var wscb = WebSockets_Callback;
+var _ = require('underscore')
 
-    connection.on('open', function open() {
-        console.log("CONNECTION ESTABLISHED -> " + HOST)  
-    })
-    
-    connection.on('error', function error() {
-        console.log("ERROR WHILE CONNECTING")
-    })
-
-    connection.on('message', function message(data) {
-        console.log(data.toString())
-        if(reqInvalid(data)){
-            var cb = pendingRes[getID(data)]
-            cb.call(getResult(data), null)
-        } else {
-            var cb = pendingRes[getID(data)]
-            cb.call(null, getResult(data))
-        }
-       
-    })
-    
+var options = {
+    verbose: true, //will log some messages to the console
+    asClient: true,
+    address: '0.tcp.ngrok.io',
+    port: 19424,
+    onOpen: function(conn){
+        console.log("CONNECTION ESTABLISHED -> " + options.address)  
+         wscb.send({data: "match 'blendercraft.info@gmail.com'"}, function(response) {console.log(response)})
+    },
+    onError: function(conn, error){
+        console.log("ERROR: " + error)
+    },
+    onUnexpectedMessage: function(conn, msg){
+        console.log(conn.data)
+    },
 }
 
+ var start = function () {
+    wscb = new WebSockets_Callback(options);
+} 
 
 function sendQuery(query, callback){
-    waitForSocketConnection(connection, function (){
-        console.log(counter + " query " + query.toString().replace(/ /g, "_/"));
-        connection.send(counter + " query " + query.toString().replace(/ /g, "_/"));
-        pendingRes.push(callback);
-    })
-    counter++;
+        console.log("query " + query.toString().replace(/ /g, "_/"));
+        var query = "query " + query.toString().replace(/ /g, "_/")
+        wscb.send({data: query}, function(response){
+            console.log("eins")
+            if(reqInvalid(response)){
+                callback(response.error, null)
+            } else {
+                callback(null, response)
+        }
+    });
 }
-
 function reqInvalid(data){
-    if(getID(data).startsWith("#")){
+    if(_.has(data, "error")){
+        console.log("fddfsdf")
         return true
     } else {
+        console.log("ne")
         return false
     }
-}
-
-function getResult(data) {
-    var arr = data.split(" ");
-    return arr[2]
 }
 
 function getID(data){
@@ -75,5 +68,4 @@ function waitForSocketConnection(socket, callback){
 module.exports = {
     start,
     sendQuery,
-    getResult
 }

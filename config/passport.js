@@ -1,5 +1,7 @@
 var LocalStrategy   = require('passport-local').Strategy;
 var fetcher = require('../fetcher.js')
+var app = require('../app.js')
+var md5 = require('md5')
 
 // expose this function to our app using module.exports
 module.exports = function(passport) {
@@ -12,19 +14,12 @@ module.exports = function(passport) {
 
     // used to serialize the user for the session
     passport.serializeUser(function(user, done) {
-		done(null, user.id);
+		done(null, user);
     });
 
     // used to deserialize the user
-    passport.deserializeUser(function(id, done) {
-		fetcher.sendQuery("select * from users where id = "+id,function(err, data){	
-            if(data = null){
-                console.log(err)
-                done(err);
-            } else {
-                done(err, data[0]);
-            }
-		});
+    passport.deserializeUser(function(user, done) {
+		done(null,user)
     });
 	
 
@@ -88,18 +83,24 @@ module.exports = function(passport) {
         passReqToCallback : true 
     },
     function(req, email, password, done) {
-        console.log("fdsfsdfdsfsfdsf")
          fetcher.sendQuery("SELECT * FROM `user` WHERE `email` = '" + email + "'",function(err,data){
-			if (err)
+            console.log(JSON.stringify(data))
+            if (err) {
+                console.log("lost")
                 return done(err);
-			 if (!data.length) {
+            }
+			 if (typeof data === "undefined") {
+                console.log("lost length")
                 return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
             } 
-			
-            if (!(data[0].password == password))
+            console.log(md5(password))
+            console.log(data);
+            console.log(data.data.password);
+            if (!(data.data.password == md5(password))) {
+                console.log("lost pw")
                 return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
-			
-            return done(null, rows[0]);			
+            }
+            return done(null, data);			
 		
 		});
 		
