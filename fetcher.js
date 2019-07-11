@@ -1,6 +1,6 @@
 const WebSocket = require('ws');
 var HOST = "ws://0.tcp.ngrok.io"
-var PORT = "13419"
+var PORT = "11754"
 var counter = 0;
 var pendingRes = [];
 var connection;
