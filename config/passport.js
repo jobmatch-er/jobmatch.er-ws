@@ -36,23 +36,17 @@ module.exports = function(passport) {
         passReqToCallback : true // allows us to pass back the entire request to the callback
     },
     function(req, email, password, done) {
-
 		// find a user whose email is the same as the forms email
         // we are checking to see if the user trying to login already exists
         fetcher.sendQuery("select * from users where email = '"+email+"'",function(err, data){	
-            console.log(rows);
+            console.log(data);
 			console.log("above row object");
-            if(data = null)
+            if(err)
                 console.log(err)
                 done(err);
-            if (rows.length) {
+            if (!(typeof data === "undefined")) {
                 return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
             } else {
-    
-                    // if there is no user with that email
-                    // create the user
-                    var newUserMysql = new Object();
-                    
                     newUserMysql.email    = email;
                     newUserMysql.password = password; // use the generateHash function in our user model
                     newUserMysql.birthday = req.body.birthday
