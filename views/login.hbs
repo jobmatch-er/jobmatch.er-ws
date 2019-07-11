@@ -1,22 +1,44 @@
 <html>
-    <head>
-        <title>
-            JobMatch.er | Login
-        </title>
-    </head>
-    <body>
-        <form action="/auth/login" method="post">
-    <div>
-        <label>Username:</label>
-        <input type="text" name="email"/>
+
+<head>
+    <title>
+        JobMatch.er | Login
+    </title>
+</head>
+
+<body>
+    <div class="view fullcenterinner">
+        <div class="loginform center">
+            <form action="/auth/login" method="post">
+                <div>
+                    <div class="accentbarTitle"></div>
+                    <h1 class="logintitle">Login</h1>
+                    <div class="custominput">
+                        <input type="text" name="email" placeholder="E-Mail Adresse"
+                            autocomplete="autocomplete_off_hack_xfr4!k" />
+                        <div class="accentbar"></div>
+                    </div>
+                    <br>
+                    <div class="custominput">
+                        <input type="password" name="password" placeholder="Passwort"
+                            autocomplete="autocomplete_off_hack_xfr4!k" />
+                        <div class="accentbar"></div>
+                    </div>
+
+                    <div class="button left">
+                        Anmelden
+                    </div>
+
+                    <div class="button disabled right">
+                        Registrieren
+                    </div>
+                    <div>
+                        <input type="submit" value="Log In" />
+                    </div>
+            </form>
+        </div>
     </div>
-    <div>
-        <label>Password:</label>
-        <input type="password" name="password"/>
-    </div>
-    <div>
-        <input type="submit" value="Log In"/>
-    </div>
-</form>
-    </body>
+
+</body>
+
 </html>

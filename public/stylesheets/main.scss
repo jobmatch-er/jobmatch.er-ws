@@ -8,4 +8,7 @@ $font-light: #9D9D9D;
 $font-lighter: #ADADAD;
 $button-disabled: #CECECE;
 
+@import "scss/mixins.scss";
 @import "scss/enviorment.scss";
+@import "scss/attributes.scss";
+@import "scss/login.scss";
