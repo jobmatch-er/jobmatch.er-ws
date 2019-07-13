@@ -1,5 +1,46 @@
 
-@media (max-height: 1650px)
+@media (min-width: 1000px)
 {
+    .loginform
+    {
+        width: 40vw;
+    }
+
+    .custominput 
+    {
+        > .accentbar
+        {
+            width: 30.75vw;
+        }
+
+        > input
+        {
+            width: 28vw;
+        }
+
+        width: 28vw;
+    }
+
+    .buttontable 
+    {
+        width: 27.1vw;
+    } 
     
+    .button
+    {
+        width: 13vw;
+    }
+
+    .accentbarTitle
+    {
+        width: 2vw;
+    }
+}
+
+@media (min-width: 1200px)
+{
+    .accentbar
+    {
+        width: 27vw;
+    }
 }
