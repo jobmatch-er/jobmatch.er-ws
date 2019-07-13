@@ -1,6 +1,6 @@
 .loginform
 {
-    margin-top: 25vh;
+    margin-right: 20vw;
 
     height: 40vh;
 
@@ -13,6 +13,12 @@
     border-radius: 30px;
 
     @include shadow();
+
+    z-index: 10;
+
+    //overflow: hidden;
+
+    position: fixed;
 }
 
 .logintitle

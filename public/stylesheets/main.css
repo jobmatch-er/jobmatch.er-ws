@@ -11,6 +11,7 @@ body {
 
 .jobmatcher-background {
   perspective: 1px;
+  position: fixed;
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -23,6 +24,7 @@ body {
   display: inline-grid;
   grid-template-columns: repeat(30, 4vw);
   grid-template-rows: repeat(20, 4vw);
+  padding: 100vh 0;
 }
 .jobmatcher-background > .parallax {
   background-color: #ff782b;
@@ -94,7 +96,7 @@ body {
 }
 
 .loginform {
-  margin-top: 25vh;
+  margin-right: 20vw;
   height: 40vh;
   width: 60vw;
   padding: auto;
@@ -103,6 +105,8 @@ body {
   -webkit-box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
   -moz-box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
   box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
+  z-index: 10;
+  position: fixed;
 }
 
 .logintitle {
