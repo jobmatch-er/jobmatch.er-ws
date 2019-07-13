@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
-$accent: #FF843E;
+$accent: rgb(255, 120, 43);
 $white: #fff;
 $font-dark: #707070;
 $font-middle: #9B9B9B;
@@ -12,3 +12,4 @@ $button-disabled: #CECECE;
 @import "scss/enviorment.scss";
 @import "scss/attributes.scss";
 @import "scss/login.scss";
+@import "scss/media.scss";
