@@ -94,6 +94,26 @@ body {
   margin: 0;
 }
 
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+     supported by Chrome and Opera */
+}
+
+.accentSpan {
+  color: #ff782b;
+}
+
 .loginform {
   margin-right: 20vw;
   height: 40vh;
@@ -179,9 +199,9 @@ body {
   height: 0.4vh;
   width: 3.4vw;
   background-color: #ff782b;
-  -webkit-box-shadow: 0px 6px 63px 2px rgba(0, 0, 0, 0.33);
-  -moz-box-shadow: 0px 6px 63px 2px rgba(0, 0, 0, 0.33);
-  box-shadow: 0px 6px 63px 2px rgba(0, 0, 0, 0.33);
+  -webkit-box-shadow: 0px 1px 53px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 1px 53px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 1px 53px 0px rgba(0, 0, 0, 0.75);
   border-radius: 1rem;
   position: absolute;
   margin-left: 2.6rem;
@@ -253,6 +273,29 @@ body {
   .accentbar {
     width: 27vw;
   }
+}
+.landingbox {
+  margin-right: 20vw;
+  height: 30vh;
+  width: 50vw;
+  padding: auto;
+  background-color: #fff;
+  border-radius: 30px;
+  -webkit-box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
+  box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
+  z-index: 10;
+  position: fixed;
+  top: 30vh;
+  left: 25vw;
+  text-align: center;
+}
+.landingbox > table {
+  width: 50vw;
+}
+.landingbox > h1 {
+  color: #9B9B9B;
+  text-shadow: 0px 1px 18px #ADADAD;
 }
 
 /*# sourceMappingURL=main.css.map */

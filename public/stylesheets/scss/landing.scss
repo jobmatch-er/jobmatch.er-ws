@@ -1,0 +1,41 @@
+.landingbox
+{
+    margin-right: 20vw;
+
+    height: 30vh;
+
+    width: 50vw;
+
+    padding: auto;
+
+    background-color: $white;
+
+    border-radius: 30px;
+
+    @include shadow();
+
+    z-index: 10;
+
+    //overflow: hidden;
+
+    position: fixed;
+
+    top: 30vh;
+    left: 25vw;
+
+    > table
+    {
+        width: 50vw;
+    }
+
+    > h1
+    {
+        color: $font-middle;
+
+        text-shadow: 0px 1px 18px #ADADAD;
+
+
+    }
+    
+    text-align: center;
+}

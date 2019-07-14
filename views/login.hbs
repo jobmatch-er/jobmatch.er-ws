@@ -18,48 +18,42 @@
             </div>
             <div class="loginform center">
                 <form action="/auth/login" method="post">
+                    <div class="accentbarTitle"></div>
+                    <h1 class="logintitle">Login</h1>
+                    <div class="custominput">
+                        <input type="text" name="email" placeholder="E-Mail Adresse"
+                            autocomplete="autocomplete_off_hack_xfr4!k" />
+                        <div class="accentbar"></div>
+                    </div>
+                    <br>
+                    <div class="custominput">
+                        <input type="password" name="password" placeholder="Passwort"
+                            autocomplete="autocomplete_off_hack_xfr4!k" />
+                        <div class="accentbar"></div>
+                    </div>
+
+                    <table class="buttontable">
+                        <tr>
+                            <td>
+                                <div class="button noselect">
+                                    Anmelden
+                                </div>
+                            </td>
+                            <td class="middlerow">
+                            </td>
+                            <td>
+                                <div class="button disabled noselect">
+                                    Registrieren
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                     <div>
-                        <div class="accentbarTitle"></div>
-                        <h1 class="logintitle">Login</h1>
-                        <div class="custominput">
-                            <input type="text" name="email" placeholder="E-Mail Adresse"
-                                autocomplete="autocomplete_off_hack_xfr4!k" />
-                            <div class="accentbar"></div>
-                        </div>
-                        <br>
-                        <div class="custominput">
-                            <input type="password" name="password" placeholder="Passwort"
-                                autocomplete="autocomplete_off_hack_xfr4!k" />
-                            <div class="accentbar"></div>
-                        </div>
-
-                        <table class="buttontable">
-                            <tr>
-                                <td>
-                                    <div class="button left">
-                                        Anmelden
-                                    </div>
-                                </td>
-                                <td class="middlerow">
-                                </td>
-                                <td>
-                                    <div class="button disabled right">
-                                        Registrieren
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-
-
-
-
-                        <div>
-                            <input type="submit" value="Log In" />
-                        </div>
+                        <input type="submit" value="Log In" />
+                    </div>
                 </form>
             </div>
         </div>
-
     </body>
 
 </html>
