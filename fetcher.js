@@ -5,38 +5,45 @@ var _ = require('underscore')
 var options = {
     verbose: true, //will log some messages to the console
     asClient: true,
-    address: 'localhost',
-    port: 54345,
-    onOpen: function(conn){
-        console.log("CONNECTION ESTABLISHED -> " + options.address)  
-         wscb.send({data: "match 'blendercraft.info@gmail.com'"}, function(response) {console.log(response)})
+    address: '0.tcp.ngrok.io',
+    port: 16016,
+    onOpen: function (conn) {
+        console.log("CONNECTION ESTABLISHED -> " + options.address)
+        wscb.send({
+            data: "match 'blendercraft.info@gmail.com'"
+        }, function (response) {
+            console.log(response)
+        })
     },
-    onError: function(conn, error){
+    onError: function (conn, error) {
         console.log("ERROR: " + error)
     },
-    onUnexpectedMessage: function(conn, msg){
+    onUnexpectedMessage: function (conn, msg) {
         console.log(conn.data)
     },
 }
 
- var start = function () {
+var start = function () {
     wscb = new WebSockets_Callback(options);
-} 
+}
 
-function sendQuery(query, callback){
-        console.log("query " + query.toString().replace(/ /g, "_/"));
-        var query = "query " + query.toString().replace(/ /g, "_/")
-        wscb.send({data: query}, function(response){
-            console.log("eins")
-            if(reqInvalid(response)){
-                callback(response.error, null)
-            } else {
-                callback(null, response)
+function sendQuery(query, callback) {
+    console.log("query " + query.toString().replace(/ /g, "_/"));
+    var query = "query " + query.toString().replace(/ /g, "_/")
+    wscb.send({
+        data: query
+    }, function (response) {
+        console.log("eins")
+        if (reqInvalid(response)) {
+            callback(response.error, null)
+        } else {
+            callback(null, response)
         }
     });
 }
-function reqInvalid(data){
-    if(_.has(data, "error")){
+
+function reqInvalid(data) {
+    if (_.has(data, "error")) {
         console.log("fddfsdf")
         return true
     } else {
@@ -45,17 +52,17 @@ function reqInvalid(data){
     }
 }
 
-function getID(data){
+function getID(data) {
     var arr = data.split(" ");
     return arr[0]
 }
 
-function waitForSocketConnection(socket, callback){
+function waitForSocketConnection(socket, callback) {
     setTimeout(
         function () {
             if (socket.readyState === 1) {
                 console.log("Connection is made")
-                if (callback != null){
+                if (callback != null) {
                     callback();
                 }
             } else {

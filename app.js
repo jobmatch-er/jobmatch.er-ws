@@ -12,7 +12,6 @@ var session = require('express-session');
 var cookieParser = require('cookie-parser')
 
 var indexRouter = require('./routes/index');
-var profileRouter = require('./routes/profile');
 var authRouter = require('./routes/auth');
 var matchingRouter = require('./routes/matching');
 var contactRouter = require('./routes/contact');
@@ -39,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 ppconfig(passport);
 
 app.use('/', indexRouter);
-app.use('/profile', profileRouter);
+app.use('/matching', matchingRouter);
 app.use('/auth', authRouter);
 app.use('/contact', contactRouter);
 

@@ -1,5 +1,6 @@
 
-function addParallaxScroll() 
+
+/* function addParallaxScroll() 
 {
     window.addEventListener('scroll', () => 
     {
@@ -12,4 +13,4 @@ function addParallaxScroll()
     }, false)
 
     console.log("parallax");
-}
+} */
