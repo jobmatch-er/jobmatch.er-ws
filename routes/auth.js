@@ -6,7 +6,7 @@ var passport = require('passport')
 /* GET home page. */
 router.get('/login', function(req, res) {
   console.log("Userdata after auth", req.user)
-  res.render('login');
+  res.render('login', { title: 'JobMatch.er | Anmeldung' });
 });
 
 router.post('/login',

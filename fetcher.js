@@ -5,8 +5,8 @@ var _ = require('underscore')
 var options = {
     verbose: true, //will log some messages to the console
     asClient: true,
-    address: '0.tcp.ngrok.io',
-    port: 19424,
+    address: 'localhost',
+    port: 54345,
     onOpen: function(conn){
         console.log("CONNECTION ESTABLISHED -> " + options.address)  
          wscb.send({data: "match 'blendercraft.info@gmail.com'"}, function(response) {console.log(response)})

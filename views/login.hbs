@@ -1,22 +1,59 @@
 <html>
+
     <head>
         <title>
             JobMatch.er | Login
         </title>
+        <script src="/scripts/scroll.js" type="javascript"></script>
     </head>
-    <body>
-        <form action="/auth/login" method="post">
-    <div>
-        <label>Username:</label>
-        <input type="text" name="email"/>
-    </div>
-    <div>
-        <label>Password:</label>
-        <input type="password" name="password"/>
-    </div>
-    <div>
-        <input type="submit" value="Log In"/>
-    </div>
-</form>
+
+    <body onload="addParallaxScroll();">
+        <div class="view fullcenterinner">
+            <div class="jobmatcher-background">
+                <div class="parallax" id="one"></div>
+                <div class="parallax" id="two"></div>
+                <div class="parallax" id="three"></div>
+                <div class="parallax" id="four"></div>
+                <div class="parallax" id="five"></div>
+            </div>
+            <div class="loginform center">
+                <form action="/auth/login" method="post">
+                    <div class="accentbarTitle"></div>
+                    <h1 class="logintitle">Login</h1>
+                    <div class="custominput">
+                        <input type="text" name="email" placeholder="E-Mail Adresse"
+                            autocomplete="autocomplete_off_hack_xfr4!k" />
+                        <div class="accentbar"></div>
+                    </div>
+                    <br>
+                    <div class="custominput">
+                        <input type="password" name="password" placeholder="Passwort"
+                            autocomplete="autocomplete_off_hack_xfr4!k" />
+                        <div class="accentbar"></div>
+                    </div>
+
+                    <table class="buttontable">
+                        <tr>
+                            <td>
+                                <div class="button noselect">
+                                    Anmelden
+                                </div>
+                            </td>
+                            <td class="middlerow">
+                            </td>
+                            <td>
+                                <div class="button disabled noselect">
+                                    Registrieren
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div>
+                        <input type="submit" value="Log In" />
+                    </div>
+                </form>
+            </div>
+        </div>
     </body>
+
 </html>
