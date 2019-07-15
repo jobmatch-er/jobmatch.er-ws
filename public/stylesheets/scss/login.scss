@@ -36,51 +36,51 @@
 {
     > .accentbar
     {
-        background-color: lighten($accent, 7) !important;
+        background-color: lighten($accent, 7);
 
-        height: 1.4vh !important;
+        height: 1.4vh;
         //width: 49.7vw;
-        width: calc(inherit - 1px) !important;
+        width: calc(inherit - 1px);
 
-        border-radius: 0 0 20px 20px !important;
+        border-radius: 0 0 20px 20px;
 
-        transition: all ease-out 0.3s !important;
-        transform: translateY(7vh) !important;
+        transition: all ease-out 0.3s;
+        transform: translateY(7vh);
     }
 
     > input
     {
-        background-color: $white !important;
+        background-color: $white;
 
-        height: 8vh !important;
-        width: calc(49.7vw - 2rem) !important;
+        height: 8vh;
+        width: calc(49.7vw - 2rem);
 
-        position: absolute !important;
+        position: absolute;
 
-        border: none !important;
-        outline: none !important;
+        border: none;
+        outline: none;
 
-        border-radius: 1.5rem 1.5rem 1rem 1rem !important;
+        border-radius: 1.5rem 1.5rem 1rem 1rem;
 
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
+        padding-left: 1rem;
+        padding-right: 1rem;
 
-        font-size: 1.5rem !important;
+        font-size: 1.5rem;
 
-        margin-left: 0px !important;
+        margin-left: 0px;
 
-        font-family: 'Open Sans', sans-serif !important;
+        font-family: 'Open Sans', sans-serif;
 
-        color: $font-middle !important;
+        color: $font-middle;
     }
 
     > input:focus + .accentbar
     {
-        -webkit-box-shadow: 0px 6px 63px 2px rgba(0,0,0,0.33) !important;
-        -moz-box-shadow: 0px 6px 63px 2px rgba(0,0,0,0.33) !important;
-        box-shadow: 0px 6px 63px 2px rgba(0,0,0,0.33) !important;
+        -webkit-box-shadow: 0px 6px 63px 2px rgba(0,0,0,0.33);
+        -moz-box-shadow: 0px 6px 63px 2px rgba(0,0,0,0.33);
+        box-shadow: 0px 6px 63px 2px rgba(0,0,0,0.33);
 
-        background-color: $accent !important;
+        background-color: $accent;
 
         @include shadow();
 
