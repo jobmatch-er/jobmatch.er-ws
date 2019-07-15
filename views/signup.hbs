@@ -1,73 +1,53 @@
 <html>
-
-<head>
-
-</head>
-
 <body>
-   <div class=“view fullcenterinner”>
-       <div class=“jobmatcher-background”>
-           <div class=“parallax” id=“one”></div>
-           <div class=“parallax” id=“two”></div>
-           <div class=“parallax” id=“three”></div>
-           <div class=“parallax” id=“four”></div>
-           <div class=“parallax” id=“five”></div>
+   <div class="view fullcenterinner">
+       <div class="jobmatcher-background">
+           <div class="parallax" id="one"></div>
+           <div class="parallax" id="two"></div>
+           <div class="parallax" id="three"></div>
+           <div class="parallax" id="four"></div>
+           <div class="parallax" id="five"></div>
        </div>
-
-       <div class=“signupform”>
-           <br>
-           <br>
-           <div class=“custominput”>
-               <input type=“text” name=“email” placeholder=“E-Mail Adresse”/>
-               <div class=“accentbar”></div>
-           </div>
-           <br>
-           <div class=“custominput”>
-               <input type=“password” name=“password” placeholder=“Passwort”/>
-               <div class=“accentbar”></div>
-           </div>
-           <br>
-           <div class=“custominput”>
-               <input type=“password” name=“repeatpassword” placeholder=“Passwort wiederholen”/>
-               <div class=“accentbar”></div>
-           </div>
-           <br>
-           <div class=“custominput”>
-               <input type=“text” name=“brithdate” placeholder=“Geburtstag (dd.mm.YYYY)“/>
-               <div class=“accentbar”></div>
-           </div>
-           <br>
-           <div class=“custominput”>
-               <input type=“text” name=“city” placeholder=“Stadt”/>
-               <div class=“accentbar”></div>
-           </div>
-           <br>
-           <br>
-
-           <form action=“/auth/signup” method=“post”>
-               <div>
-                   <label>Email:</label>
-                   <input type=“text” name=“email” />
+       <div class="signupform">
+           <form action="/auth/signup" method="post">
+               <br>
+               <br>
+               <div class="custominput">
+                   <input type="text" name="email" placeholder="E-Mail Adresse" />
+                   <div class="accentbar"></div>
                </div>
-               <div>
-                   <label>Passwort:</label>
-                   <input type=“password” name=“password” />
+               <br>
+               <div class="custominput">
+                   <input type="password" name="password" placeholder="Passwort" />
+                   <div class="accentbar"></div>
                </div>
-               <div>
-                   <label>Passwort wiederholen:</label>
-                   <input type=“password” name=“password” />
+               <br>
+               <div class="custominput">
+                   <input type="password" name="repeatpassword" placeholder="Passwort wiederholen" />
+                   <div class="accentbar"></div>
                </div>
-               <div>
-                   <label>Geburtstag:</label>
-                   <input type=“text” name=“birthdate” />
+               <br>
+               <div class="custominput">
+                   <input type="text" name="phone" placeholder="Telefonnummer" />
+                   <div class="accentbar"></div>
                </div>
-               <div>
-                   <label>Stadt:</label>
-                   <input type=“text” name=“city” />
+               <br>
+               <div class="custominput">
+                   <input type="text" name="birthdate" placeholder="Geburtstag (dd.mm.YYYY)" />
+                   <div class="accentbar"></div>
                </div>
+               <br>
+               <div class="custominput">
+                   <input type="text" name="city" placeholder="Stadt" />
+                   <div class="accentbar"></div>
+               </div>
+               <br>
+               <br>
+               <div class="button noselect">
+                     <a style="text-decoration: inherit; color: inherit;" href="/auth/register"> Registrieren </a> 
+                </div>
            </form>
        </div>
    </div>
 </body>
-
 </html>
