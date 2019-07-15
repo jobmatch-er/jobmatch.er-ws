@@ -174,10 +174,20 @@ body
 
         @include shadow();
 
-        height: 3vh;
+        height: 3.05vh;
         width: 20vw;
 
         overflow: scroll;
+
+        font-size: 1.2rem;
+
+        font-weight: bold;
+
+        text-align: center;
+
+        transition: all ease 0.2s;
+
+        cursor: pointer;
     }
 
     .select-selected:after 
@@ -189,7 +199,6 @@ body
         width: 0;
         height: 0;
         border: 6px solid transparent;
-        border-color: #fff transparent transparent transparent;
     }
   
     .select-selected.select-arrow-active:after 
@@ -203,7 +212,6 @@ body
         color: #ffffff;
         padding: 8px 16px;
         border: 1px solid transparent;
-        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
         cursor: pointer;
         user-select: none;
     }
@@ -217,7 +225,7 @@ body
         right: 0;
         z-index: 99;
 
-        margin-top: 24vh;
+        margin-top: 27vh;
     }
   
     .select-hide 
@@ -228,5 +236,21 @@ body
     .select-items div:hover, .same-as-selected 
     {
         background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .select-selected:hover
+    {
+        -webkit-box-shadow: 0px 6px 63px 2px rgba(0,0,0,0.25);
+        -moz-box-shadow: 0px 6px 63px 2px rgba(0,0,0,0.25);
+        box-shadow: 0px 6px 63px 2px rgba(0,0,0,0.25);
+    }
+
+    .select-selected:active
+    {
+        background-color: darken($accent, 3);
+
+        -webkit-box-shadow: 0px 6px 63px 2px rgba(0,0,0,0.1);
+        -moz-box-shadow: 0px 6px 63px 2px rgba(0,0,0,0.1);
+        box-shadow: 0px 6px 63px 2px rgba(0,0,0,0.1);
     }
 }

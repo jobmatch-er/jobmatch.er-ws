@@ -24,12 +24,41 @@
 
 #signupbtn
 {
-    margin-left: 33.7vw;
+    margin-left: 29.72vw;
     margin-bottom: 5vw;
     margin-top: 1vw;
+
+    width: 24vw;
 }
 
 #jobdropdown
 {
-       
+    margin-top: 1vw;
+    margin-left: 4vw;
+}
+
+#employeroryeedropdown
+{
+    > .select-items 
+    {
+        margin-top: -.2vh !important;
+        margin-left: 1.2vw;
+
+        margin-bottom: 2vh;
+
+        position: relative;
+
+        @include shadow();
+
+        border-radius: 0 0 1rem 1rem;
+
+        transition: all ease .3s;
+    }
+
+    margin-bottom: 2vh;
+    margin-left: 4vw;
+
+    margin-top: 1vh;
+
+    width: 20vw;
 }
