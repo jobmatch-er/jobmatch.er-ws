@@ -23,7 +23,7 @@ function(req, res) {
   if (req.user) {
     res.redirect("/contact");
 } else {
-  res.render('register', { title: 'JobMatch.er | Registrierung' });
+  res.render('signup', { title: 'JobMatch.er | Registrierung' });
 }
 });
 
