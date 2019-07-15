@@ -1,0 +1,22 @@
+.signupform
+{
+    margin-right: 20vw;
+
+    height: 40vh;
+
+    width: 60vw;
+
+    padding: auto;
+
+    background-color: $white;
+
+    border-radius: 30px;
+
+    @include shadow();
+
+    z-index: 10;
+
+    //overflow: hidden;
+
+    position: fixed;
+}

@@ -1,50 +1,63 @@
 <html>
-    <head>
-        <title>
-            JobMatch.er | Login
-        </title>
-    </head>
-    <body>
-        <form action="/auth/signup" method="post">
-    <div>
-         <select name = "dropdown">
-            <option value = "Computer Architecture" selected>Computer Architecture</option>
-            <option value = "Java">Java</option>
-            <option value = "Discrete Mathematics">Discrete Mathematics</option>
-         </select>
-    </div>
-    <div>
-        <label>Email:</label>
-        <input type="text" name="email"/>
-    </div>
-    <div>
-        <label>Passwort:</label>
-        <input type="password" name="password"/>
-    </div>
+
+<head>
+
+</head>
+
+<body>
+    <div class="view fullcenterinner">
+        <div class="jobmatcher-background">
+            <div class="parallax" id="one"></div>
+            <div class="parallax" id="two"></div>
+            <div class="parallax" id="three"></div>
+            <div class="parallax" id="four"></div>
+            <div class="parallax" id="five"></div>
+        </div>
+
+        <div class="signupform hide">
+            <form action="/auth/signup" method="post">
+                <div>
+                    <select name="dropdown">
+                        <option value="Computer Architecture" selected>Computer Architecture</option>
+                        <option value="Java">Java</option>
+                        <option value="Discrete Mathematics">Discrete Mathematics</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Email:</label>
+                    <input type="text" name="email" />
+                </div>
+                <div>
+                    <label>Passwort:</label>
+                    <input type="password" name="password" />
+                </div>
+                <div>
+                    <label>Passwort wiederholen:</label>
+                    <input type="password" name="password" />
+                </div>
+                <div>
+                    <label>Geburtstag:</label>
+                    <input type="password" name="password" />
+                </div>
+                <div>
+                    <label>Stadt:</label>
+                    <input type="password" name="password" />
+                </div>
+                <div>
+                    <label>Arbeitsbereich:</label>
+                    <input type="password" name="password" />
+                </div>
+        </div>
         <div>
-        <label>Passwort wiederholen:</label>
-        <input type="password" name="password"/>
-    </div>
+            <label>Arbeitsformen:</label>
+            <input type="password" name="password" />
+        </div>
         <div>
-        <label>Geburtstag:</label>
-        <input type="password" name="password"/>
+            <input type="submit" value="Log In" />
+        </div>
     </div>
-        <div>
-        <label>Stadt:</label>
-        <input type="password" name="password"/>
+    </form>
     </div>
-        <div>
-        <label>Arbeitsbereich:</label>
-        <input type="password" name="password"/>
-    </div>
-    </div>
-        <div>
-        <label>Arbeitsformen:</label>
-        <input type="password" name="password"/>
-    </div>
-    <div>
-        <input type="submit" value="Log In"/>
-    </div>
-</form>
-    </body>
+</body>
+
 </html>
