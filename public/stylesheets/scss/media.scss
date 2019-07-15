@@ -35,6 +35,11 @@
     {
         width: 2vw;
     }
+
+    .signupform
+    {
+        width: 40vw !important;
+    }
 }
 
 @media (min-width: 1200px)
@@ -42,5 +47,33 @@
     .accentbar
     {
         width: 27vw;
+    }
+}
+
+@media (min-width: 1400px)
+{
+    .signupform
+    {
+        width: 35vw !important;
+    }
+
+    .button
+    {
+        
+    }
+
+    .custominput 
+    {
+        > .accentbar
+        {
+            width: 25.17vw;
+        }
+
+        > input
+        {
+            width: 23vw;
+        }
+
+        width: 23vw;
     }
 }

@@ -726,10 +726,29 @@ body {
   .accentbarTitle {
     width: 2vw;
   }
+
+  .signupform {
+    width: 40vw !important;
+  }
 }
 @media (min-width: 1200px) {
   .accentbar {
     width: 27vw;
+  }
+}
+@media (min-width: 1400px) {
+  .signupform {
+    width: 35vw !important;
+  }
+
+  .custominput {
+    width: 23vw;
+  }
+  .custominput > .accentbar {
+    width: 25.17vw;
+  }
+  .custominput > input {
+    width: 23vw;
   }
 }
 .landingbox {
@@ -770,14 +789,20 @@ body {
   z-index: 10;
   overflow: scroll;
   position: fixed;
-  grid-area: gg;
+  overflow: hidden;
 }
 
-grid-container {
+.grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: "gg lol";
+  display: inline-grid;
+  position: relative;
+  grid-template-columns: repeat(30, 4vw);
+  grid-template-rows: repeat(20, 4vw);
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: transparent !important;
 }
 
 .employercard {
@@ -795,6 +820,7 @@ grid-container {
   z-index: 10;
   overflow: scroll;
   position: absolute;
+  overflow: hidden;
 }
 
 .signupform {
