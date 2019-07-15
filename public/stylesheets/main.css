@@ -1,16 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 html {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif !important;
 }
 
 body {
   background-color: #fff;
   padding: 0;
   margin: 0;
-}
-
-table {
-  border: none !important;
 }
 
 .jobmatcher-background {
@@ -233,33 +230,33 @@ table {
   margin-right: 4vw;
 }
 .custominput > .accentbar {
-  background-color: #ff8f4f !important;
-  height: 1.4vh !important;
-  width: calc(inherit - 1px) !important;
-  border-radius: 0 0 20px 20px !important;
-  transition: all ease-out 0.3s !important;
-  transform: translateY(7vh) !important;
+  background-color: #ff8f4f;
+  height: 1.4vh;
+  width: calc(inherit - 1px);
+  border-radius: 0 0 20px 20px;
+  transition: all ease-out 0.3s;
+  transform: translateY(7vh);
 }
 .custominput > input {
-  background-color: #fff !important;
-  height: 8vh !important;
-  width: calc(49.7vw - 2rem) !important;
-  position: absolute !important;
-  border: none !important;
-  outline: none !important;
-  border-radius: 1.5rem 1.5rem 1rem 1rem !important;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
-  font-size: 1.5rem !important;
-  margin-left: 0px !important;
-  font-family: "Open Sans", sans-serif !important;
-  color: #9B9B9B !important;
+  background-color: #fff;
+  height: 8vh;
+  width: calc(49.7vw - 2rem);
+  position: absolute;
+  border: none;
+  outline: none;
+  border-radius: 1.5rem 1.5rem 1rem 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1.5rem;
+  margin-left: 0px;
+  font-family: "Open Sans", sans-serif;
+  color: #9B9B9B;
 }
 .custominput > input:focus + .accentbar {
-  -webkit-box-shadow: 0px 6px 63px 2px rgba(0, 0, 0, 0.33) !important;
-  -moz-box-shadow: 0px 6px 63px 2px rgba(0, 0, 0, 0.33) !important;
-  box-shadow: 0px 6px 63px 2px rgba(0, 0, 0, 0.33) !important;
-  background-color: #ff782b !important;
+  -webkit-box-shadow: 0px 6px 63px 2px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: 0px 6px 63px 2px rgba(0, 0, 0, 0.33);
+  box-shadow: 0px 6px 63px 2px rgba(0, 0, 0, 0.33);
+  background-color: #ff782b;
   -webkit-box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
   -moz-box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
   box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
