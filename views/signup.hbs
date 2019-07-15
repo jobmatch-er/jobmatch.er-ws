@@ -9,433 +9,431 @@
             <div class="parallax" id="four"></div>
             <div class="parallax" id="five"></div>
         </div>
-        <div class="signupform">
+        <div id="signupform" class="signupform">
             <form action="/auth/signup" method="post">
-                <br>
-                <br>
-                <br>
-                <div class="custominput">
-                    <input type="text" name="email" placeholder="E-Mail Adresse" />
-                    <div class="accentbar"></div>
-                </div>
-                <br>
-                <div class="custominput">
-                    <input type="password" name="password" placeholder="Passwort" />
-                    <div class="accentbar"></div>
-                </div>
-                <br>
-                <div class="custominput">
-                    <input type="password" name="repeatpassword" placeholder="Passwort wiederholen" />
-                    <div class="accentbar"></div>
-                </div>
-                <br>
-                <div class="custominput">
-                    <input type="text" name="phone" placeholder="Telefonnummer" />
-                    <div class="accentbar"></div>
-                </div>
-                <br>
-                <div class="custominput">
-                    <input type="text" name="birthdate" placeholder="Geburtstag (dd.mm.YYYY)" />
-                    <div class="accentbar"></div>
-                </div>
-                <br>
-                <div class="custominput">
-                    <input type="text" name="city" placeholder="Stadt" />
-                    <div class="accentbar"></div>
-                </div>
-                <br>
-                <div class="button noselect" id="signupbtn">
-                    <a style="text-decoration: inherit; color: inherit;" href="/auth/register"> Registrieren</a>
-                </div>
-                <div class="dropdown" style="width:200px;">
-                    <select>
-                        <option value="1">Beruf auswählen</option>
-                        <option value="2">Anlagenmechaniker/in</option>
-                        <option value="3">Anlagenmechaniker/in fuer Sanitaer-, Heizungs- und Klimatechnik</option>
-                        <option value="4">Assistent/in Betriebsleitung im Gartenbau</option>
-                        <option value="5">Assistent/in fuer Geovisualisierung</option>
-                        <option value="6">Assistent/in fuer Produktdesign</option>
-                        <option value="7">Augenoptiker/in</option>
-                        <option value="8">Ausbaufacharbeiter/in</option>
-                        <option value="9">Ausbaumanager/in</option>
-                        <option value="10">Automobilkaufmann/-frau</option>
-                        <option value="11">Aussenhandelsassistent/in</option>
-                        <option value="12">Bankkaufmann/-frau</option>
-                        <option value="13">Baugeraetefuehrer/in</option>
-                        <option value="14">Baustoffpruefer/in</option>
-                        <option value="15">Bauten- und Objektbeschichter/in</option>
-                        <option value="16">Bauwerksmechaniker/in fuer Abbruch und Betontrenntechnik</option>
-                        <option value="17">Bauzeichner/in</option>
-                        <option value="18">Bergbautechnologe/-in</option>
-                        <option value="19">Berufsfeuerwehrmann/-frau</option>
-                        <option value="20">Berufskraftfahrer/in</option>
-                        <option value="21">Bestattungsfachkraft</option>
-                        <option value="22">Beton- und Stahlbetonbauer/in</option>
-                        <option value="23">Betriebsassistent/in im Handwerk</option>
-                        <option value="24">Betriebswirt/in fuer Textil</option>
-                        <option value="25">Betriebswirt/in fuer Verkehr/Logistik</option>
-                        <option value="26">Betriebswirt/in fuer allgemeine Betriebswirtschaft</option>
-                        <option value="27">Betriebswirt/in im Aussenhandel</option>
-                        <option value="28">Biologielaborant/in</option>
-                        <option value="29">Biologisch-technische/r Assistent/in</option>
-                        <option value="30">Bodenleger/in</option>
-                        <option value="31">Brauer/in und Maelzer/in</option>
-                        <option value="32">Buchbinder/in</option>
-                        <option value="33">Buchhaendler/in</option>
-                        <option value="34">Baecker/in</option>
-                        <option value="35">Buehnentaenzer/in</option>
-                        <option value="36">Chemielaborant/in</option>
-                        <option value="37">Chemikant/-in</option>
-                        <option value="38">Chemisch-technische/r Assistent/in</option>
-                        <option value="39">Dachdecker/in</option>
-                        <option value="40">Diplom-Rechtspfleger/in</option>
-                        <option value="41">Diaetassistent/in</option>
-                        <option value="42">Dolmetscher/in</option>
-                        <option value="43">Drogist/in</option>
-                        <option value="44">Duales Studium BWL</option>
-                        <option value="45">Duales Studium Bank</option>
-                        <option value="46">Duales Studium Bauingenieurwesen</option>
-                        <option value="47">Duales Studium Bundesnachrichtendienst (gehobener nichttechnischer Dienst)</option>
-                        <option value="48">Duales Studium Elektrotechnik</option>
-                        <option value="49">Duales Studium Fahrzeugtechnik</option>
-                        <option value="50">Duales Studium Gesundheitswesen</option>
-                        <option value="51">Duales Studium Handel</option>
-                        <option value="52">Duales Studium Informatik</option>
-                        <option value="53">Duales Studium Logistik</option>
-                        <option value="54">Duales Studium Maschinenbau</option>
-                        <option value="55">Duales Studium Mathematik</option>
-                        <option value="56">Duales Studium Medien</option>
-                        <option value="57">Duales Studium Mediendesign</option>
-                        <option value="58">Duales Studium Pflege</option>
-                        <option value="59">Duales Studium Polizei</option>
-                        <option value="60">Duales Studium Sozialpaedagogik</option>
-                        <option value="61">Duales Studium Verwaltung</option>
-                        <option value="62">Duales Studium Verwaltungsinformatik</option>
-                        <option value="63">Duales Studium Wirtschaft und Management</option>
-                        <option value="64">Duales Studium Wirtschaftsinformatik</option>
-                        <option value="65">Duales Studium Wirtschaftsingenieur</option>
-                        <option value="66">Duales Studium Zoll (gehobener nichttechnischer Dienst)</option>
-                        <option value="67">Edelsteinschleifer/in</option>
-                        <option value="68">Elektroniker/-in Betriebstechnik</option>
-                        <option value="69">Elektroniker/-in fuer Gebaeude- und Infrastruktursysteme</option>
-                        <option value="70">Elektroniker/-in fuer Informations- und Systemtechnik</option>
-                        <option value="71">Elektroniker/in</option>
-                        <option value="72">Elektroniker/in fuer Automatisierungstechnik</option>
-                        <option value="73">Elektroniker/in fuer Geraete und Systeme</option>
-                        <option value="74">Elektroniker/in fuer Maschinen und Antriebstechnik</option>
-                        <option value="75">Elektrotechnische/r Assistent/in</option>
-                        <option value="76">Ergotherapeut/in</option>
-                        <option value="77">Erzieher/in</option>
-                        <option value="78">Erzieher/in fuer Jugend- und Heimerziehung</option>
-                        <option value="79">Eurokaufmann/-frau</option>
-                        <option value="80">Fachangestellte/r fuer Arbeitsmarktdienstleistungen</option>
-                        <option value="81">Fachangestellte/r fuer Baederbetriebe</option>
-                        <option value="82">Fachangestellte/r fuer Medien- und Informationsdienste</option>
-                        <option value="83">Fachangestellter fuer Markt- und Sozialforschung</option>
-                        <option value="84">Fachberater/in Vertrieb</option>
-                        <option value="85">Fachberater/in fuer Softwaretechniken</option>
-                        <option value="86">Fachberater/in fuer integrierte Systeme</option>
-                        <option value="87">Fachinformatiker/in</option>
-                        <option value="88">Fachkraft fuer Abwassertechnik</option>
-                        <option value="89">Fachkraft fuer Agrarservice</option>
-                        <option value="90">Fachkraft fuer Fruchtsafttechnik</option>
-                        <option value="91">Fachkraft fuer Kurier-, Express- und Postdienstleistungen</option>
-                        <option value="92">Fachkraft fuer Lagerlogistik</option>
-                        <option value="93">Fachkraft fuer Lebensmitteltechnik</option>
-                        <option value="94">Fachkraft fuer Metalltechnik</option>
-                        <option value="95">Fachkraft fuer Moebel-, Kuechen- und Umzugsservice</option>
-                        <option value="96">Fachkraft fuer Rohr-, Kanal- und Industrieservice</option>
-                        <option value="97">Fachkraft fuer Schutz und Sicherheit</option>
-                        <option value="98">Fachkraft fuer Veranstaltungstechnik</option>
-                        <option value="99">Fachkraft im Fahrbetrieb</option>
-                        <option value="100">Fachkraft im Gastgewerbe</option>
-                        <option value="101">Fachlagerist/in</option>
-                        <option value="102">Fachmann/-frau fuer Systemgastronomie</option>
-                        <option value="103">Fachverkaeufer/in im Lebensmittelhandwerk</option>
-                        <option value="104">Fachwirt/in Vertrieb im Einzelhandel</option>
-                        <option value="105">Fahrradmonteur/in</option>
-                        <option value="106">Fahrzeuglackierer/in</option>
-                        <option value="107">Feinwerkmechaniker/in</option>
-                        <option value="108">Fertigungsmechaniker/in</option>
-                        <option value="109">Feuerungs- und Schornsteinbauer/in</option>
-                        <option value="110">Film- und Videoeditor/-in</option>
-                        <option value="111">Finanzassistent/in</option>
-                        <option value="112">Finanzwirt/in</option>
-                        <option value="113">Fleischer/in</option>
-                        <option value="114">Fliesen-, Platten- und Mosaikleger/in</option>
-                        <option value="115">Florist/in</option>
-                        <option value="116">Flugbegleiter/in</option>
-                        <option value="117">Fluggeraetelektroniker/in</option>
-                        <option value="118">Fluggeraetmechaniker/in</option>
-                        <option value="119">Fluglotse/-lotsin</option>
-                        <option value="120">Forstwirt/in</option>
-                        <option value="121">Fotodesigner/in</option>
-                        <option value="122">Fotograf/in</option>
-                        <option value="123">Fotomedienfachmann/-frau</option>
-                        <option value="124">Fremdsprachenkorrespondent/-in</option>
-                        <option value="125">Fremdsprachensekretaer/in</option>
-                        <option value="126">Friseur/in</option>
-                        <option value="127">Gebaeudereiniger/in</option>
-                        <option value="128">Gehobener Auswaertiger Dienst - Diplom Verwaltungsfachwirt/in</option>
-                        <option value="129">Geomatiker/in</option>
-                        <option value="130">Geruestbauer/in</option>
-                        <option value="131">Gestalter/in fuer visuelles Marketing</option>
-                        <option value="132">Gesundheits- und Krankenpflegehelfer/in</option>
-                        <option value="133">Gesundheits- und Krankenpfleger/in</option>
-                        <option value="134">Giessereimechaniker/in</option>
-                        <option value="135">Glaser/in</option>
-                        <option value="136">Gleisbauer/in</option>
-                        <option value="137">Goldschmied/in</option>
-                        <option value="138">Grafikdesigner/in</option>
-                        <option value="139">Gaertner/in</option>
-                        <option value="140">Handelsassistent/in / Fachwirt/in - Vertrieb im Einzelhandel</option>
-                        <option value="141">Handelsfachwirt/in</option>
-                        <option value="142">Hauswirtschafter/in</option>
-                        <option value="143">Heilerziehungspflegehelfer/-in</option>
-                        <option value="144">Heilerziehungspfleger/in</option>
-                        <option value="145">Hochbaufacharbeiter/in</option>
-                        <option value="146">Holzmechaniker/in</option>
-                        <option value="147">Hotelfachmann/-frau</option>
-                        <option value="148">Hotelkaufmann/-frau</option>
-                        <option value="149">Hoerakustiker/in</option>
-                        <option value="150">IT-System-Kaufmann/-frau</option>
-                        <option value="151">Immobilienkaufmann/-frau</option>
-                        <option value="152">Industrieelektriker/in</option>
-                        <option value="153">Industriekaufmann/-frau</option>
-                        <option value="154">Industriemechaniker/in</option>
-                        <option value="155">Industrietechnologe/-technologin</option>
-                        <option value="156">Informatikkaufmann/-frau</option>
-                        <option value="157">Informations- und Telekommunikationssystem-Elektroniker/in</option>
-                        <option value="158">Informationselektroniker/in</option>
-                        <option value="159">Internationale/r Betriebswirt/in</option>
-                        <option value="160">Internationale/r Luftverkehrsassistent/in</option>
-                        <option value="161">Investmentfondskaufmann/-frau</option>
-                        <option value="162">Justizfachangestellte/r</option>
-                        <option value="163">Kanalbauer/in</option>
-                        <option value="164">Karosserie- und Fahrzeugbaumechaniker/in</option>
-                        <option value="165">Kaufmann/-frau fuer Bueromanagement</option>
-                        <option value="166">Kaufmann/-frau fuer Dialogmarketing</option>
-                        <option value="167">Kaufmann/-frau fuer Marketingkommunikation</option>
-                        <option value="168">Kaufmann/-frau fuer Spedition und Logistikdienstleistung</option>
-                        <option value="169">Kaufmann/-frau fuer Versicherungen und Finanzen</option>
-                        <option value="170">Kaufmann/-frau fuer audiovisuelle Medien</option>
-                        <option value="171">Kaufmann/-frau im E-Commerce</option>
-                        <option value="172">Kaufmann/-frau im Einzelhandel</option>
-                        <option value="173">Kaufmann/-frau im Gesundheitswesen</option>
-                        <option value="174">Kaufmann/-frau im Gross- und Aussenhandel</option>
-                        <option value="175">Kaufmaennische/r Assistent/in fuer Betriebsinformatik</option>
-                        <option value="176">Kaufmaennische/r Assistent/in im Bereich Buero/Sekretariat</option>
-                        <option value="177">Kaufmaennische/r Assistent/in im Bereich Datenverarbeitung/Rechnungswesen</option>
-                        <option value="178">Klempner/in</option>
-                        <option value="179">Koch/Koechin</option>
-                        <option value="180">Kommunikationsdesigner/in</option>
-                        <option value="181">Konditor/in</option>
-                        <option value="182">Konstruktionsmechaniker/in</option>
-                        <option value="183">Kosmetiker/in</option>
-                        <option value="184">Kraftfahrzeugmechatroniker/in</option>
-                        <option value="185">Kriminalkommissar/in – Gehobener Kriminaldienst des Bundes</option>
-                        <option value="186">Lacklaborant/in</option>
-                        <option value="187">Land- und Baumaschinenmechatroniker/in</option>
-                        <option value="188">Landwirt/in</option>
-                        <option value="189">Lasertechnische/r Assistent/in</option>
-                        <option value="190">Lebensmitteltechnische/r Assistent/in</option>
-                        <option value="191">Logopaede/Logopaedin</option>
-                        <option value="192">Lokfuehrer/in / Eisenbahner/in im Betriebsdienst</option>
-                        <option value="193">Luftverkehrskaufmann/-frau</option>
-                        <option value="194">Maler/in und Lackierer/in</option>
-                        <option value="195">Management-/Direktionsassistent/in</option>
-                        <option value="196">Marketingfachkraft/-assistent/in</option>
-                        <option value="197">Maschinen- und Anlagenfuehrer/in</option>
-                        <option value="198">Mathematisch-technische/r Assistent/in</option>
-                        <option value="199">Mathematisch-technische/r Softwareentwickler/in</option>
-                        <option value="200">Maurer/in</option>
-                        <option value="201">Massschneider/in</option>
-                        <option value="202">Mechatroniker/-in</option>
-                        <option value="203">Mechatroniker/in fuer Kaeltetechnik</option>
-                        <option value="204">Medienassistent/-in</option>
-                        <option value="205">Mediengestalter/in Bild und Ton</option>
-                        <option value="206">Mediengestalter/in Digital und Print</option>
-                        <option value="207">Medienkaufmann/-frau Digital und Print</option>
-                        <option value="208">Medientechnologe/-in Siebdruck</option>
-                        <option value="209">Medientechnologe/-technologin Druck</option>
-                        <option value="210">Medientechnologe/-technologin Druckverarbeitung</option>
-                        <option value="211">Medizinische/r Fachangestellte/r (MFA)</option>
-                        <option value="212">Metallbauer/in</option>
-                        <option value="213">Mikrotechnologe/-technologin</option>
-                        <option value="214">Milchtechnologe/-technologin</option>
-                        <option value="215">Milchwirtschaftliche/r Laborant/in</option>
-                        <option value="216">Modedesigner/in</option>
-                        <option value="217">Nautische/r Offiziersassistent/in</option>
-                        <option value="218">Notarfachangestellte/r</option>
-                        <option value="219">Notfallsanitaeter/in</option>
-                        <option value="220">Oberflaechenbeschichter/in</option>
-                        <option value="221">Orthopaedieschuhmacher/in</option>
-                        <option value="222">Orthopaedietechnik-Mechaniker/in</option>
-                        <option value="223">PTA - Pharmazeutisch-technische/r Assistent/in</option>
-                        <option value="224">Packmitteltechnologe/-technologin</option>
-                        <option value="225">Papiertechnologe/-technologin</option>
-                        <option value="226">Parkettleger/in</option>
-                        <option value="227">Personaldienstleistungskaufmann/-frau</option>
-                        <option value="228">Pferdewirt/in</option>
-                        <option value="229">Pharmakant/in</option>
-                        <option value="230">Pharmazeutisch-kaufmaennische/r Angestellte/r</option>
-                        <option value="231">Physikalisch-technische/r Assistent/in</option>
-                        <option value="232">Physiklaborant/in</option>
-                        <option value="233">Physiotherapeut/in</option>
-                        <option value="234">Podologe/Podologin</option>
-                        <option value="235">Polizist/in bei der Landespolizei</option>
-                        <option value="236">Produktionsmechaniker/in – Textil</option>
-                        <option value="237">Raumausstatter/in</option>
-                        <option value="238">Rechtsanwalts- und Notarfachangestellte/r</option>
-                        <option value="239">Rechtsanwaltsfachangestellte/r</option>
-                        <option value="240">Restaurantfachmann/-frau</option>
-                        <option value="241">Rohrleitungsbauer/in</option>
-                        <option value="242">Rollladen- und Sonnenschutzmechatroniker/in</option>
-                        <option value="243">Schifffahrtskaufmann/-frau</option>
-                        <option value="244">Schornsteinfeger/in</option>
-                        <option value="245">Servicefachkraft fuer Dialogmarketing</option>
-                        <option value="246">Sozialpaedagogische/r Assistent/in / Kinderpfleger/in</option>
-                        <option value="247">Sozialversicherungsfachangestellte/r</option>
-                        <option value="248">Spielzeughersteller/in</option>
-                        <option value="249">Sport- und Fitnesskaufmann/-frau</option>
-                        <option value="250">Sportassistent/in</option>
-                        <option value="251">Sportfachmann/-frau</option>
-                        <option value="252">Steinmetz/in und Steinbildhauer/in</option>
-                        <option value="253">Steuerfachangestellte/r</option>
-                        <option value="254">Strassenbauer/in</option>
-                        <option value="255">Strassenwaerter/in</option>
-                        <option value="256">Stuckateur/in</option>
-                        <option value="257">Systemelektroniker/in</option>
-                        <option value="258">Suesswarentechnologe/-technologin</option>
-                        <option value="259">Technische/r Assistent/in fuer Mechatronik</option>
-                        <option value="260">Technische/r Assistent/in fuer Metallografie und Werkstoffkunde</option>
-                        <option value="261">Technische/r Assistent/in fuer nachwachsende Rohstoffe</option>
-                        <option value="262">Technische/r Assistent/in fuer naturkundliche Museen und Forschungsinstitute</option>
-                        <option value="263">Technische/r Assistent/in im Bereich Elektronik und Datentechnik</option>
-                        <option value="264">Technische/r Betriebswirt/in - Handwerk</option>
-                        <option value="265">Technische/r Modellbauer/in</option>
-                        <option value="266">Technische/r Produktdesigner/in</option>
-                        <option value="267">Technische/r Systeminformatiker/in</option>
-                        <option value="268">Technische/r Systemplaner/in</option>
-                        <option value="269">Textil- und Modenaeher/in</option>
-                        <option value="270">Tiefbaufacharbeiter/in</option>
-                        <option value="271">Tiermedizinische/r Fachangestellte/r</option>
-                        <option value="272">Tierpfleger/in</option>
-                        <option value="273">Tierwirt/in</option>
-                        <option value="274">Tischler/in</option>
-                        <option value="275">Tourismuskaufmann/-frau fuer Privat- und Geschaeftsreisen</option>
-                        <option value="276">Touristikassistent/in</option>
-                        <option value="277">Trockenbaumonteur/in</option>
-                        <option value="278">Uhrmacher/in</option>
-                        <option value="279">Umweltschutztechnische/r Assistent/in</option>
-                        <option value="280">Veranstaltungskaufmann/-frau</option>
-                        <option value="281">Verfahrensmechaniker/-in in der Steine- und Erdenindustrie</option>
-                        <option value="282">Verfahrensmechaniker/in Glastechnik</option>
-                        <option value="283">Verfahrensmechaniker/in fuer Beschichtungstechnik</option>
-                        <option value="284">Verfahrensmechaniker/in fuer Brillenoptik</option>
-                        <option value="285">Verfahrensmechaniker/in fuer Kunststoff- und Kautschuktechnik</option>
-                        <option value="286">Verfahrensmechaniker/in in der Huetten- und Halbzeugindustrie</option>
-                        <option value="287">Verkaeufer/in</option>
-                        <option value="288">Vermessungstechniker/in</option>
-                        <option value="289">Verwaltungsfachangestellte/r</option>
-                        <option value="290">Werbetechniker/in</option>
-                        <option value="291">Werkstoffpruefer/in</option>
-                        <option value="292">Werkzeugmechaniker/in</option>
-                        <option value="293">Winzer/in</option>
-                        <option value="294">Wirtschaftsassistent/in im Bereich Fremdsprachen</option>
-                        <option value="295">Wirtschaftsassistent/in im Bereich Medien</option>
-                        <option value="296">Wirtschaftsjurist/in – Wirtschaftsrecht (Bachelor of Laws)</option>
-                        <option value="297">Zahnmedizinische/r Fachangestellte/r</option>
-                        <option value="298">Zahntechniker/in</option>
-                        <option value="299">Zerspanungsmechaniker/in</option>
-                        <option value="300">Zimmerer/in</option>
-                        <option value="301">Zweiradmechatroniker/in</option>
+                <span id="signupinput">
+                    <br>
+                    <br>
+                    <select id="dropdownlol" name="top5">
+                        <option value="Arbeitsuchender">Arbeitsuchender</option>
+                        <option value="Arbeitgeber">Arbeitgeber</option>
                     </select>
-                </div>
-                <br>
-                <br>
+                    <div class="custominput">
+                        <input type="text" name="email" placeholder="E-Mail Adresse" />
+                        <div class="accentbar"></div>
+                    </div>
+                    <br>
+                    <div class="custominput">
+                        <input type="password" name="password" placeholder="Passwort" />
+                        <div class="accentbar"></div>
+                    </div>
+                    <br>
+                    <div class="custominput">
+                        <input type="password" name="repeatpassword" placeholder="Passwort wiederholen" />
+                        <div class="accentbar"></div>
+                    </div>
+                    <br>
+                    <div class="custominput">
+                        <input type="text" name="phone" placeholder="Telefonnummer" />
+                        <div class="accentbar"></div>
+                    </div>
+                    <br>
+                    <div class="custominput">
+                        <input type="text" name="birthdate" placeholder="Geburtstag (dd.mm.YYYY)" />
+                        <div class="accentbar"></div>
+                    </div>
+                    <br>
+                    <div class="custominput">
+                        <input type="text" name="city" placeholder="Stadt" />
+                        <div class="accentbar"></div>
+                    </div>
+                    <br>
+                    <span id="optional"></span>
+                    <div class="button noselect" id="signupbtn">
+                        <a style="text-decoration: inherit; color: inherit;" href="/auth/register"> Registrieren</a>
+                    </div>
+                    <div class="dropdown" style="width:200px;">
+                        <select>
+                            <option value="1">Beruf auswählen</option>
+                            <option value="2">Anlagenmechaniker/in</option>
+                            <option value="3">Anlagenmechaniker/in fuer Sanitaer-, Heizungs- und Klimatechnik</option>
+                            <option value="4">Assistent/in Betriebsleitung im Gartenbau</option>
+                            <option value="5">Assistent/in fuer Geovisualisierung</option>
+                            <option value="6">Assistent/in fuer Produktdesign</option>
+                            <option value="7">Augenoptiker/in</option>
+                            <option value="8">Ausbaufacharbeiter/in</option>
+                            <option value="9">Ausbaumanager/in</option>
+                            <option value="10">Automobilkaufmann/-frau</option>
+                            <option value="11">Aussenhandelsassistent/in</option>
+                            <option value="12">Bankkaufmann/-frau</option>
+                            <option value="13">Baugeraetefuehrer/in</option>
+                            <option value="14">Baustoffpruefer/in</option>
+                            <option value="15">Bauten- und Objektbeschichter/in</option>
+                            <option value="16">Bauwerksmechaniker/in fuer Abbruch und Betontrenntechnik</option>
+                            <option value="17">Bauzeichner/in</option>
+                            <option value="18">Bergbautechnologe/-in</option>
+                            <option value="19">Berufsfeuerwehrmann/-frau</option>
+                            <option value="20">Berufskraftfahrer/in</option>
+                            <option value="21">Bestattungsfachkraft</option>
+                            <option value="22">Beton- und Stahlbetonbauer/in</option>
+                            <option value="23">Betriebsassistent/in im Handwerk</option>
+                            <option value="24">Betriebswirt/in fuer Textil</option>
+                            <option value="25">Betriebswirt/in fuer Verkehr/Logistik</option>
+                            <option value="26">Betriebswirt/in fuer allgemeine Betriebswirtschaft</option>
+                            <option value="27">Betriebswirt/in im Aussenhandel</option>
+                            <option value="28">Biologielaborant/in</option>
+                            <option value="29">Biologisch-technische/r Assistent/in</option>
+                            <option value="30">Bodenleger/in</option>
+                            <option value="31">Brauer/in und Maelzer/in</option>
+                            <option value="32">Buchbinder/in</option>
+                            <option value="33">Buchhaendler/in</option>
+                            <option value="34">Baecker/in</option>
+                            <option value="35">Buehnentaenzer/in</option>
+                            <option value="36">Chemielaborant/in</option>
+                            <option value="37">Chemikant/-in</option>
+                            <option value="38">Chemisch-technische/r Assistent/in</option>
+                            <option value="39">Dachdecker/in</option>
+                            <option value="40">Diplom-Rechtspfleger/in</option>
+                            <option value="41">Diaetassistent/in</option>
+                            <option value="42">Dolmetscher/in</option>
+                            <option value="43">Drogist/in</option>
+                            <option value="44">Duales Studium BWL</option>
+                            <option value="45">Duales Studium Bank</option>
+                            <option value="46">Duales Studium Bauingenieurwesen</option>
+                            <option value="47">Duales Studium Bundesnachrichtendienst (gehobener nichttechnischer
+                                Dienst)</option>
+                            <option value="48">Duales Studium Elektrotechnik</option>
+                            <option value="49">Duales Studium Fahrzeugtechnik</option>
+                            <option value="50">Duales Studium Gesundheitswesen</option>
+                            <option value="51">Duales Studium Handel</option>
+                            <option value="52">Duales Studium Informatik</option>
+                            <option value="53">Duales Studium Logistik</option>
+                            <option value="54">Duales Studium Maschinenbau</option>
+                            <option value="55">Duales Studium Mathematik</option>
+                            <option value="56">Duales Studium Medien</option>
+                            <option value="57">Duales Studium Mediendesign</option>
+                            <option value="58">Duales Studium Pflege</option>
+                            <option value="59">Duales Studium Polizei</option>
+                            <option value="60">Duales Studium Sozialpaedagogik</option>
+                            <option value="61">Duales Studium Verwaltung</option>
+                            <option value="62">Duales Studium Verwaltungsinformatik</option>
+                            <option value="63">Duales Studium Wirtschaft und Management</option>
+                            <option value="64">Duales Studium Wirtschaftsinformatik</option>
+                            <option value="65">Duales Studium Wirtschaftsingenieur</option>
+                            <option value="66">Duales Studium Zoll (gehobener nichttechnischer Dienst)</option>
+                            <option value="67">Edelsteinschleifer/in</option>
+                            <option value="68">Elektroniker/-in Betriebstechnik</option>
+                            <option value="69">Elektroniker/-in fuer Gebaeude- und Infrastruktursysteme</option>
+                            <option value="70">Elektroniker/-in fuer Informations- und Systemtechnik</option>
+                            <option value="71">Elektroniker/in</option>
+                            <option value="72">Elektroniker/in fuer Automatisierungstechnik</option>
+                            <option value="73">Elektroniker/in fuer Geraete und Systeme</option>
+                            <option value="74">Elektroniker/in fuer Maschinen und Antriebstechnik</option>
+                            <option value="75">Elektrotechnische/r Assistent/in</option>
+                            <option value="76">Ergotherapeut/in</option>
+                            <option value="77">Erzieher/in</option>
+                            <option value="78">Erzieher/in fuer Jugend- und Heimerziehung</option>
+                            <option value="79">Eurokaufmann/-frau</option>
+                            <option value="80">Fachangestellte/r fuer Arbeitsmarktdienstleistungen</option>
+                            <option value="81">Fachangestellte/r fuer Baederbetriebe</option>
+                            <option value="82">Fachangestellte/r fuer Medien- und Informationsdienste</option>
+                            <option value="83">Fachangestellter fuer Markt- und Sozialforschung</option>
+                            <option value="84">Fachberater/in Vertrieb</option>
+                            <option value="85">Fachberater/in fuer Softwaretechniken</option>
+                            <option value="86">Fachberater/in fuer integrierte Systeme</option>
+                            <option value="87">Fachinformatiker/in</option>
+                            <option value="88">Fachkraft fuer Abwassertechnik</option>
+                            <option value="89">Fachkraft fuer Agrarservice</option>
+                            <option value="90">Fachkraft fuer Fruchtsafttechnik</option>
+                            <option value="91">Fachkraft fuer Kurier-, Express- und Postdienstleistungen</option>
+                            <option value="92">Fachkraft fuer Lagerlogistik</option>
+                            <option value="93">Fachkraft fuer Lebensmitteltechnik</option>
+                            <option value="94">Fachkraft fuer Metalltechnik</option>
+                            <option value="95">Fachkraft fuer Moebel-, Kuechen- und Umzugsservice</option>
+                            <option value="96">Fachkraft fuer Rohr-, Kanal- und Industrieservice</option>
+                            <option value="97">Fachkraft fuer Schutz und Sicherheit</option>
+                            <option value="98">Fachkraft fuer Veranstaltungstechnik</option>
+                            <option value="99">Fachkraft im Fahrbetrieb</option>
+                            <option value="100">Fachkraft im Gastgewerbe</option>
+                            <option value="101">Fachlagerist/in</option>
+                            <option value="102">Fachmann/-frau fuer Systemgastronomie</option>
+                            <option value="103">Fachverkaeufer/in im Lebensmittelhandwerk</option>
+                            <option value="104">Fachwirt/in Vertrieb im Einzelhandel</option>
+                            <option value="105">Fahrradmonteur/in</option>
+                            <option value="106">Fahrzeuglackierer/in</option>
+                            <option value="107">Feinwerkmechaniker/in</option>
+                            <option value="108">Fertigungsmechaniker/in</option>
+                            <option value="109">Feuerungs- und Schornsteinbauer/in</option>
+                            <option value="110">Film- und Videoeditor/-in</option>
+                            <option value="111">Finanzassistent/in</option>
+                            <option value="112">Finanzwirt/in</option>
+                            <option value="113">Fleischer/in</option>
+                            <option value="114">Fliesen-, Platten- und Mosaikleger/in</option>
+                            <option value="115">Florist/in</option>
+                            <option value="116">Flugbegleiter/in</option>
+                            <option value="117">Fluggeraetelektroniker/in</option>
+                            <option value="118">Fluggeraetmechaniker/in</option>
+                            <option value="119">Fluglotse/-lotsin</option>
+                            <option value="120">Forstwirt/in</option>
+                            <option value="121">Fotodesigner/in</option>
+                            <option value="122">Fotograf/in</option>
+                            <option value="123">Fotomedienfachmann/-frau</option>
+                            <option value="124">Fremdsprachenkorrespondent/-in</option>
+                            <option value="125">Fremdsprachensekretaer/in</option>
+                            <option value="126">Friseur/in</option>
+                            <option value="127">Gebaeudereiniger/in</option>
+                            <option value="128">Gehobener Auswaertiger Dienst - Diplom Verwaltungsfachwirt/in</option>
+                            <option value="129">Geomatiker/in</option>
+                            <option value="130">Geruestbauer/in</option>
+                            <option value="131">Gestalter/in fuer visuelles Marketing</option>
+                            <option value="132">Gesundheits- und Krankenpflegehelfer/in</option>
+                            <option value="133">Gesundheits- und Krankenpfleger/in</option>
+                            <option value="134">Giessereimechaniker/in</option>
+                            <option value="135">Glaser/in</option>
+                            <option value="136">Gleisbauer/in</option>
+                            <option value="137">Goldschmied/in</option>
+                            <option value="138">Grafikdesigner/in</option>
+                            <option value="139">Gaertner/in</option>
+                            <option value="140">Handelsassistent/in / Fachwirt/in - Vertrieb im Einzelhandel</option>
+                            <option value="141">Handelsfachwirt/in</option>
+                            <option value="142">Hauswirtschafter/in</option>
+                            <option value="143">Heilerziehungspflegehelfer/-in</option>
+                            <option value="144">Heilerziehungspfleger/in</option>
+                            <option value="145">Hochbaufacharbeiter/in</option>
+                            <option value="146">Holzmechaniker/in</option>
+                            <option value="147">Hotelfachmann/-frau</option>
+                            <option value="148">Hotelkaufmann/-frau</option>
+                            <option value="149">Hoerakustiker/in</option>
+                            <option value="150">IT-System-Kaufmann/-frau</option>
+                            <option value="151">Immobilienkaufmann/-frau</option>
+                            <option value="152">Industrieelektriker/in</option>
+                            <option value="153">Industriekaufmann/-frau</option>
+                            <option value="154">Industriemechaniker/in</option>
+                            <option value="155">Industrietechnologe/-technologin</option>
+                            <option value="156">Informatikkaufmann/-frau</option>
+                            <option value="157">Informations- und Telekommunikationssystem-Elektroniker/in</option>
+                            <option value="158">Informationselektroniker/in</option>
+                            <option value="159">Internationale/r Betriebswirt/in</option>
+                            <option value="160">Internationale/r Luftverkehrsassistent/in</option>
+                            <option value="161">Investmentfondskaufmann/-frau</option>
+                            <option value="162">Justizfachangestellte/r</option>
+                            <option value="163">Kanalbauer/in</option>
+                            <option value="164">Karosserie- und Fahrzeugbaumechaniker/in</option>
+                            <option value="165">Kaufmann/-frau fuer Bueromanagement</option>
+                            <option value="166">Kaufmann/-frau fuer Dialogmarketing</option>
+                            <option value="167">Kaufmann/-frau fuer Marketingkommunikation</option>
+                            <option value="168">Kaufmann/-frau fuer Spedition und Logistikdienstleistung</option>
+                            <option value="169">Kaufmann/-frau fuer Versicherungen und Finanzen</option>
+                            <option value="170">Kaufmann/-frau fuer audiovisuelle Medien</option>
+                            <option value="171">Kaufmann/-frau im E-Commerce</option>
+                            <option value="172">Kaufmann/-frau im Einzelhandel</option>
+                            <option value="173">Kaufmann/-frau im Gesundheitswesen</option>
+                            <option value="174">Kaufmann/-frau im Gross- und Aussenhandel</option>
+                            <option value="175">Kaufmaennische/r Assistent/in fuer Betriebsinformatik</option>
+                            <option value="176">Kaufmaennische/r Assistent/in im Bereich Buero/Sekretariat</option>
+                            <option value="177">Kaufmaennische/r Assistent/in im Bereich
+                                Datenverarbeitung/Rechnungswesen</option>
+                            <option value="178">Klempner/in</option>
+                            <option value="179">Koch/Koechin</option>
+                            <option value="180">Kommunikationsdesigner/in</option>
+                            <option value="181">Konditor/in</option>
+                            <option value="182">Konstruktionsmechaniker/in</option>
+                            <option value="183">Kosmetiker/in</option>
+                            <option value="184">Kraftfahrzeugmechatroniker/in</option>
+                            <option value="185">Kriminalkommissar/in – Gehobener Kriminaldienst des Bundes</option>
+                            <option value="186">Lacklaborant/in</option>
+                            <option value="187">Land- und Baumaschinenmechatroniker/in</option>
+                            <option value="188">Landwirt/in</option>
+                            <option value="189">Lasertechnische/r Assistent/in</option>
+                            <option value="190">Lebensmitteltechnische/r Assistent/in</option>
+                            <option value="191">Logopaede/Logopaedin</option>
+                            <option value="192">Lokfuehrer/in / Eisenbahner/in im Betriebsdienst</option>
+                            <option value="193">Luftverkehrskaufmann/-frau</option>
+                            <option value="194">Maler/in und Lackierer/in</option>
+                            <option value="195">Management-/Direktionsassistent/in</option>
+                            <option value="196">Marketingfachkraft/-assistent/in</option>
+                            <option value="197">Maschinen- und Anlagenfuehrer/in</option>
+                            <option value="198">Mathematisch-technische/r Assistent/in</option>
+                            <option value="199">Mathematisch-technische/r Softwareentwickler/in</option>
+                            <option value="200">Maurer/in</option>
+                            <option value="201">Massschneider/in</option>
+                            <option value="202">Mechatroniker/-in</option>
+                            <option value="203">Mechatroniker/in fuer Kaeltetechnik</option>
+                            <option value="204">Medienassistent/-in</option>
+                            <option value="205">Mediengestalter/in Bild und Ton</option>
+                            <option value="206">Mediengestalter/in Digital und Print</option>
+                            <option value="207">Medienkaufmann/-frau Digital und Print</option>
+                            <option value="208">Medientechnologe/-in Siebdruck</option>
+                            <option value="209">Medientechnologe/-technologin Druck</option>
+                            <option value="210">Medientechnologe/-technologin Druckverarbeitung</option>
+                            <option value="211">Medizinische/r Fachangestellte/r (MFA)</option>
+                            <option value="212">Metallbauer/in</option>
+                            <option value="213">Mikrotechnologe/-technologin</option>
+                            <option value="214">Milchtechnologe/-technologin</option>
+                            <option value="215">Milchwirtschaftliche/r Laborant/in</option>
+                            <option value="216">Modedesigner/in</option>
+                            <option value="217">Nautische/r Offiziersassistent/in</option>
+                            <option value="218">Notarfachangestellte/r</option>
+                            <option value="219">Notfallsanitaeter/in</option>
+                            <option value="220">Oberflaechenbeschichter/in</option>
+                            <option value="221">Orthopaedieschuhmacher/in</option>
+                            <option value="222">Orthopaedietechnik-Mechaniker/in</option>
+                            <option value="223">PTA - Pharmazeutisch-technische/r Assistent/in</option>
+                            <option value="224">Packmitteltechnologe/-technologin</option>
+                            <option value="225">Papiertechnologe/-technologin</option>
+                            <option value="226">Parkettleger/in</option>
+                            <option value="227">Personaldienstleistungskaufmann/-frau</option>
+                            <option value="228">Pferdewirt/in</option>
+                            <option value="229">Pharmakant/in</option>
+                            <option value="230">Pharmazeutisch-kaufmaennische/r Angestellte/r</option>
+                            <option value="231">Physikalisch-technische/r Assistent/in</option>
+                            <option value="232">Physiklaborant/in</option>
+                            <option value="233">Physiotherapeut/in</option>
+                            <option value="234">Podologe/Podologin</option>
+                            <option value="235">Polizist/in bei der Landespolizei</option>
+                            <option value="236">Produktionsmechaniker/in – Textil</option>
+                            <option value="237">Raumausstatter/in</option>
+                            <option value="238">Rechtsanwalts- und Notarfachangestellte/r</option>
+                            <option value="239">Rechtsanwaltsfachangestellte/r</option>
+                            <option value="240">Restaurantfachmann/-frau</option>
+                            <option value="241">Rohrleitungsbauer/in</option>
+                            <option value="242">Rollladen- und Sonnenschutzmechatroniker/in</option>
+                            <option value="243">Schifffahrtskaufmann/-frau</option>
+                            <option value="244">Schornsteinfeger/in</option>
+                            <option value="245">Servicefachkraft fuer Dialogmarketing</option>
+                            <option value="246">Sozialpaedagogische/r Assistent/in / Kinderpfleger/in</option>
+                            <option value="247">Sozialversicherungsfachangestellte/r</option>
+                            <option value="248">Spielzeughersteller/in</option>
+                            <option value="249">Sport- und Fitnesskaufmann/-frau</option>
+                            <option value="250">Sportassistent/in</option>
+                            <option value="251">Sportfachmann/-frau</option>
+                            <option value="252">Steinmetz/in und Steinbildhauer/in</option>
+                            <option value="253">Steuerfachangestellte/r</option>
+                            <option value="254">Strassenbauer/in</option>
+                            <option value="255">Strassenwaerter/in</option>
+                            <option value="256">Stuckateur/in</option>
+                            <option value="257">Systemelektroniker/in</option>
+                            <option value="258">Suesswarentechnologe/-technologin</option>
+                            <option value="259">Technische/r Assistent/in fuer Mechatronik</option>
+                            <option value="260">Technische/r Assistent/in fuer Metallografie und Werkstoffkunde</option>
+                            <option value="261">Technische/r Assistent/in fuer nachwachsende Rohstoffe</option>
+                            <option value="262">Technische/r Assistent/in fuer naturkundliche Museen und
+                                Forschungsinstitute</option>
+                            <option value="263">Technische/r Assistent/in im Bereich Elektronik und Datentechnik
+                            </option>
+                            <option value="264">Technische/r Betriebswirt/in - Handwerk</option>
+                            <option value="265">Technische/r Modellbauer/in</option>
+                            <option value="266">Technische/r Produktdesigner/in</option>
+                            <option value="267">Technische/r Systeminformatiker/in</option>
+                            <option value="268">Technische/r Systemplaner/in</option>
+                            <option value="269">Textil- und Modenaeher/in</option>
+                            <option value="270">Tiefbaufacharbeiter/in</option>
+                            <option value="271">Tiermedizinische/r Fachangestellte/r</option>
+                            <option value="272">Tierpfleger/in</option>
+                            <option value="273">Tierwirt/in</option>
+                            <option value="274">Tischler/in</option>
+                            <option value="275">Tourismuskaufmann/-frau fuer Privat- und Geschaeftsreisen</option>
+                            <option value="276">Touristikassistent/in</option>
+                            <option value="277">Trockenbaumonteur/in</option>
+                            <option value="278">Uhrmacher/in</option>
+                            <option value="279">Umweltschutztechnische/r Assistent/in</option>
+                            <option value="280">Veranstaltungskaufmann/-frau</option>
+                            <option value="281">Verfahrensmechaniker/-in in der Steine- und Erdenindustrie</option>
+                            <option value="282">Verfahrensmechaniker/in Glastechnik</option>
+                            <option value="283">Verfahrensmechaniker/in fuer Beschichtungstechnik</option>
+                            <option value="284">Verfahrensmechaniker/in fuer Brillenoptik</option>
+                            <option value="285">Verfahrensmechaniker/in fuer Kunststoff- und Kautschuktechnik</option>
+                            <option value="286">Verfahrensmechaniker/in in der Huetten- und Halbzeugindustrie</option>
+                            <option value="287">Verkaeufer/in</option>
+                            <option value="288">Vermessungstechniker/in</option>
+                            <option value="289">Verwaltungsfachangestellte/r</option>
+                            <option value="290">Werbetechniker/in</option>
+                            <option value="291">Werkstoffpruefer/in</option>
+                            <option value="292">Werkzeugmechaniker/in</option>
+                            <option value="293">Winzer/in</option>
+                            <option value="294">Wirtschaftsassistent/in im Bereich Fremdsprachen</option>
+                            <option value="295">Wirtschaftsassistent/in im Bereich Medien</option>
+                            <option value="296">Wirtschaftsjurist/in – Wirtschaftsrecht (Bachelor of Laws)</option>
+                            <option value="297">Zahnmedizinische/r Fachangestellte/r</option>
+                            <option value="298">Zahntechniker/in</option>
+                            <option value="299">Zerspanungsmechaniker/in</option>
+                            <option value="300">Zimmerer/in</option>
+                            <option value="301">Zweiradmechatroniker/in</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
             </form>
         </div>
     </div>
-    <script>
-        //w3schools
-
-        var x, i, j, selElmnt, a, b, c;
-
-        x = document.getElementsByClassName("dropdown");
-        for (i = 0; i < x.length; i++) {
-            selElmnt = x[i].getElementsByTagName("select")[0];
-            a = document.createElement("DIV");
-            a.setAttribute("class", "select-selected");
-            a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-            x[i].appendChild(a);
-            b = document.createElement("DIV");
-            b.setAttribute("class", "select-items select-hide");
-            for (j = 1; j < selElmnt.length; j++) 
-            {
-                c = document.createElement("DIV");
-                c.innerHTML = selElmnt.options[j].innerHTML;
-                c.addEventListener("click", function (e) 
-                {
-                    var y, i, k, s, h;
-                    s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-                    h = this.parentNode.previousSibling;
-                    for (i = 0; i < s.length; i++) 
-                    {
-                        if (s.options[i].innerHTML == this.innerHTML) 
-                        {
-                            s.selectedIndex = i;
-                            h.innerHTML = this.innerHTML;
-                            y = this.parentNode.getElementsByClassName("same-as-selected");
-                            for (k = 0; k < y.length; k++) 
-                            {
-                                y[k].removeAttribute("class");
-                            }
-                            this.setAttribute("class", "same-as-selected");
-                            break;
-                        }
-                    }
-                    h.click();
-                });
-                b.appendChild(c);
-            }
-            x[i].appendChild(b);
-            a.addEventListener("click", function (e) 
-            {
-                e.stopPropagation();
-                closeAllSelect(this);
-                this.nextSibling.classList.toggle("select-hide");
-                this.classList.toggle("select-arrow-active");
-            });
-        }
-
-        function closeAllSelect(elmnt) 
-        {
-            var x, y, i, arrNo = [];
-            x = document.getElementsByClassName("select-items");
-            y = document.getElementsByClassName("select-selected");
-            for (i = 0; i < y.length; i++) 
-            {
-                if (elmnt == y[i]) 
-                {
-                    arrNo.push(i)
-                } 
-                else 
-                {
-                    y[i].classList.remove("select-arrow-active");
-                }
-            }
-            for (i = 0; i < x.length; i++) 
-            {
-                if (arrNo.indexOf(i)) 
-                {
-                    x[i].classList.add("select-hide");
-                }
-            }
-        }
-
-        document.addEventListener("click", closeAllSelect);
-    </script>
 </body>
+<script>
+    //w3schools
 
+    var x, i, j, selElmnt, a, b, c;
+
+    x = document.getElementsByClassName("dropdown");
+    for (i = 0; i < x.length; i++) {
+        selElmnt = x[i].getElementsByTagName("select")[0];
+        a = document.createElement("DIV");
+        a.setAttribute("class", "select-selected");
+        a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+        x[i].appendChild(a);
+        b = document.createElement("DIV");
+        b.setAttribute("class", "select-items select-hide");
+        for (j = 1; j < selElmnt.length; j++) {
+            c = document.createElement("DIV");
+            c.innerHTML = selElmnt.options[j].innerHTML;
+            c.addEventListener("click", function (e) {
+                var y, i, k, s, h;
+                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                h = this.parentNode.previousSibling;
+                for (i = 0; i < s.length; i++) {
+                    if (s.options[i].innerHTML == this.innerHTML) {
+                        s.selectedIndex = i;
+                        h.innerHTML = this.innerHTML;
+                        y = this.parentNode.getElementsByClassName("same-as-selected");
+                        for (k = 0; k < y.length; k++) {
+                            y[k].removeAttribute("class");
+                        }
+                        this.setAttribute("class", "same-as-selected");
+                        break;
+                    }
+                }
+                h.click();
+            });
+            b.appendChild(c);
+        }
+        x[i].appendChild(b);
+        a.addEventListener("click", function (e) {
+            e.stopPropagation();
+            closeAllSelect(this);
+            this.nextSibling.classList.toggle("select-hide");
+            this.classList.toggle("select-arrow-active");
+        });
+    }
+
+    function closeAllSelect(elmnt) {
+        var x, y, i, arrNo = [];
+        x = document.getElementsByClassName("select-items");
+        y = document.getElementsByClassName("select-selected");
+        for (i = 0; i < y.length; i++) {
+            if (elmnt == y[i]) {
+                arrNo.push(i)
+            } else {
+                y[i].classList.remove("select-arrow-active");
+            }
+        }
+        for (i = 0; i < x.length; i++) {
+            if (arrNo.indexOf(i)) {
+                x[i].classList.add("select-hide");
+            }
+        }
+    }
+
+    document.addEventListener("click", closeAllSelect);
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script type="text/javascript" src="/scripts/signup.js"></script>
 </html>
