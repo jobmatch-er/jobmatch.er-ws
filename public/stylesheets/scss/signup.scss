@@ -2,11 +2,12 @@
 {
     margin-right: 20vw;
 
-    height: 40vh;
+    height: 50vh;
 
     width: 60vw;
 
     padding: auto;
+    padding-left: 1.6vw;
 
     background-color: $white;
 
@@ -16,7 +17,7 @@
 
     z-index: 10;
 
-    //overflow: hidden;
+    overflow: scroll;
 
     position: fixed;
 }
