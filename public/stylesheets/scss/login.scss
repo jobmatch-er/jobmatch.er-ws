@@ -82,7 +82,7 @@
 
         background-color: $accent !important;
 
-        @include shadow() !important;
+        @include shadow();
 
 
     }
