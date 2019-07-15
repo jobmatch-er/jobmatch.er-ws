@@ -15,9 +15,7 @@
     @include shadow();
 
     z-index: 10;
-
-    //overflow: hidden;
-
+    
     position: fixed;
 }
 
@@ -69,9 +67,9 @@
 
         margin-left: 0px;
 
-        font-family: 'Open Sans', sans-serif;
-
         color: $font-middle;
+
+        font-family: 'Product Sans', sans-serif !important;
     }
 
     > input:focus + .accentbar

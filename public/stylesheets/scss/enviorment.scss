@@ -1,6 +1,6 @@
 html
 {
-    font-family: 'Roboto', sans-serif !important;
+    font-family: 'Product Sans', sans-serif !important;
 }
 
 body
@@ -161,7 +161,7 @@ body
 
 .dropdown
 {
-    > .select
+    > select
     {
         display: none;
     }
@@ -170,12 +170,14 @@ body
     {
         background-color: $accent;
 
-        border-radius: 2rem;
+        border-radius: 1rem;
 
         @include shadow();
 
         height: 3vh;
         width: 20vw;
+
+        overflow: scroll;
     }
 
     .select-selected:after 
@@ -214,6 +216,8 @@ body
         left: 0;
         right: 0;
         z-index: 99;
+
+        margin-top: 24vh;
     }
   
     .select-hide 
