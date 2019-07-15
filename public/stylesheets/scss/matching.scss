@@ -1,0 +1,58 @@
+.usercard
+{
+    margin-right: 20vw;
+
+    height: 50vh;
+
+    width: 20vw;
+
+    padding: auto;
+    padding-left: 1.6vw;
+
+    background-color: $white;
+
+    border-radius: 30px;
+
+    @include shadow();
+
+    z-index: 10;
+
+    overflow: scroll;
+
+    position: fixed;
+
+    grid-area: gg;
+}
+
+grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "gg lol";
+
+}
+.employercard
+{
+    grid-area: lol;
+
+    margin-right: 20vw;
+
+    height: 50vh;
+
+    width: 20vw;
+
+    padding: auto;
+    padding-left: 1.6vw;
+
+    background-color: $white;
+
+    border-radius: 30px;
+
+    @include shadow();
+
+    z-index: 10;
+
+    overflow: scroll;
+    
+    position: absolute;
+}
