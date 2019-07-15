@@ -9,11 +9,6 @@ var options = {
     port: 16016,
     onOpen: function (conn) {
         console.log("CONNECTION ESTABLISHED -> " + options.address)
-        wscb.send({
-            data: "match 'blendercraft.info@gmail.com'"
-        }, function (response) {
-            console.log(response)
-        })
     },
     onError: function (conn, error) {
         console.log("ERROR: " + error)
