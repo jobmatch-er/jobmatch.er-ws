@@ -169,6 +169,13 @@ body
     .select-selected 
     {
         background-color: $accent;
+
+        border-radius: 2rem;
+
+        @include shadow();
+
+        height: 3vh;
+        width: 20vw;
     }
 
     .select-selected:after 
