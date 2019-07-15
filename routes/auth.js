@@ -18,6 +18,15 @@ function(req, res) {
   res.redirect('/contact?' + req.user.data.email);
 });
 
+router.get('/sign-up',
+function(req, res) {
+  if (req.user) {
+    res.redirect("/contact");
+} else {
+  res.render('register', { title: 'JobMatch.er | Registrierung' });
+}
+});
+
 router.post('/sign-up',
 passport.authenticate('local-register' , {failureRedirect:'/auth/sign-up', failureFlash: true}),
 function(req, res) {
