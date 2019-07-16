@@ -727,6 +727,7 @@ body {
   border-radius: 0 0 20px 20px;
   transition: all ease-out 0.3s;
   transform: translateY(7vh);
+  z-index: 30;
 }
 .custominput > input {
   background-color: #fff;

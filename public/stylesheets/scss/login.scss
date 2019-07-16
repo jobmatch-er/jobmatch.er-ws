@@ -44,6 +44,8 @@
 
         transition: all ease-out 0.3s;
         transform: translateY(7vh);
+
+        z-index: 30;
     }
 
     > input
