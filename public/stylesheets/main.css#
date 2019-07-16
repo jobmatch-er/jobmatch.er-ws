@@ -645,10 +645,6 @@ body {
   display: none;
 }
 
-.fixed {
-  position: fixed !important;
-}
-
 .center {
   margin: auto;
   width: 50%;
@@ -840,14 +836,6 @@ body {
     width: 23vw;
   }
 }
-@media (max-width: 900px) {
-  .usercard {
-    grid-column-start: 3;
-    grid-row-start: 4;
-    grid-column-end: 11;
-    grid-row-end: 22;
-  }
-}
 .landingbox {
   margin-right: 20vw;
   height: 30vh;
@@ -881,9 +869,9 @@ body {
   z-index: 30;
   overflow: scroll;
   overflow: hidden;
-  grid-column-start: 3;
+  grid-column-start: 4;
   grid-row-start: 4;
-  grid-column-end: 11;
+  grid-column-end: 16;
   grid-row-end: 18;
 }
 
@@ -966,4 +954,4 @@ body {
   transition: all ease 0.3s;
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main.css%23.map */

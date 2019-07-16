@@ -330,3 +330,8 @@ body {
 .switch-input:checked+.switch-label .toggle--off {
     display: none;
 }
+
+.fixed
+{
+    position: fixed !important;
+}

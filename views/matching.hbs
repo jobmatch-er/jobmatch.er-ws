@@ -7,9 +7,9 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <nav>
+    <nav class="fixed">
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">jobmatch.er</a>
+            <a href="#" class="brand-logo">&nbsp;&nbsp;&nbsp;jobmatch.er</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="sass.html">matching</a></li>
                 <li><a href="badges.html">profile</a></li>
@@ -21,7 +21,7 @@
 
 <body>
     <div class="view fullcenterinner">
-        <div class="jobmatcher-background">
+        <div class="jobmatcher-background fixed">
             <div class="parallax" id="one"></div>
             <div class="parallax" id="two"></div>
             <div class="parallax" id="three"></div>
@@ -29,8 +29,37 @@
             <div class="parallax" id="five"></div>
         </div>
         <div class="grid-container">
-            <!--<div class="usercard"> </div>
-            <div class="employercard">g </div>-->
+            <div class="usercard">
+                <div class="matchcardheader">
+                    <div class="accentbarTitle"></div>
+                    <h1 class="logintitle">{{{username}}} (Du)</h1>
+                    <p>{{{userage}}} Jahre alt</p>
+                    <p>{{{usercity}}} | bis {{{userradius}}}km</p>
+                    <p>{{{userworktype}}}</p>
+                </div>
+                <div class="userchipselector"></div>
+                <div class="matchcardchips"></div>
+            </div>
+            <div class="employercard">
+                <div class="matchcardheader">
+                    <div class="accentbarTitle"></div>
+                    <h1 class="logintitle">{{{companyname}}}</h1>
+                    <p>{{{companywebsite}}}</p>
+                    <p>{{{companycity}}} | ca. {{{companydistance}}}km</p>
+                    <p>{{{compamyadress}}}</p>
+                    <p>{{{userworktype}}}</p>
+                </div>
+                <div class="matchcardchips"></div>
+                <div class="companyshortdescription">{{{companyshortdescription}}}</div>
+                <div class="companycontact">
+                    <button type="email" class="button noselect">
+                        {{{companyemail}}}
+                    </button>
+                    <button type="email" class="button noselect">
+                        {{{companytelephonenumber}}}
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

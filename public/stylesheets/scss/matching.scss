@@ -1,27 +1,21 @@
 .usercard
 {
-    margin-right: 20vw;
-
-    height: 50vh;
-
-    width: 20vw;
-
-    padding: auto;
-    padding-left: 1.6vw;
-
     background-color: $white;
 
     border-radius: 30px;
 
     @include shadow();
 
-    z-index: 10;
+    z-index: 30;
 
     overflow: scroll;
 
-    position: fixed;
-
     overflow: hidden;
+
+    grid-column-start: 3;
+    grid-row-start: 4;
+    grid-column-end: 11;
+    grid-row-end: 18;
 }
 
 .grid-container 
@@ -29,7 +23,7 @@
     display: grid;
     display: inline-grid;
 
-    position: relative;
+    position: fixed;
 
     grid-template-columns: repeat(30, 4vw);
     grid-template-rows: repeat(20, 4vw);
@@ -42,35 +36,25 @@
 
     background-color: transparent !important;
 
-    opacity: 0;
-
     z-index: 20;
 }
 
 .employercard
 {
-    grid-area: lol;
-
-    margin-right: 20vw;
-
-    height: 50vh;
-
-    width: 20vw;
-
-    padding: auto;
-    padding-left: 1.6vw;
-
     background-color: $white;
 
     border-radius: 30px;
 
     @include shadow();
 
-    z-index: 10;
+    z-index: 30;
 
     overflow: scroll;
-    
-    position: absolute;
 
     overflow: hidden;
+
+    grid-column-start: 16;
+    grid-row-start: 4;
+    grid-column-end: 24;
+    grid-row-end: 18;
 }

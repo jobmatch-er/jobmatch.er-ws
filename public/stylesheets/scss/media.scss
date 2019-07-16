@@ -77,3 +77,15 @@
         width: 23vw;
     }
 }
+
+
+@media (max-width: 900px)
+{
+    .usercard
+    {
+        grid-column-start: 3;
+        grid-row-start: 4;
+        grid-column-end: 11;
+        grid-row-end: 22;
+    }
+}
