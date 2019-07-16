@@ -552,7 +552,7 @@ body {
   left: 0;
   right: 0;
   z-index: 99;
-  margin-top: 28vh;
+  margin-top: 8vh;
 }
 .dropdown .select-hide {
   display: none;
@@ -887,6 +887,8 @@ body {
   top: 0;
   left: 0;
   background-color: transparent !important;
+  opacity: 0;
+  z-index: 20;
 }
 
 .employercard {
@@ -909,7 +911,7 @@ body {
 
 .signupform {
   margin-right: 20vw;
-  height: 50vh;
+  height: 70vh;
   width: 60vw;
   padding: auto;
   padding-left: 1.6vw;
