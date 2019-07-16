@@ -552,11 +552,7 @@ body {
   left: 0;
   right: 0;
   z-index: 99;
-<<<<<<< HEAD
-  margin-top: 10vh;
-=======
-  margin-top: 60vh;
->>>>>>> c23c7b4c9cef517e8c068ea552fdf310aa71c7db
+  margin-top: 12vh;
 }
 .dropdown .select-hide {
   display: none;
@@ -962,6 +958,27 @@ body {
   box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
   border-radius: 0 0 1rem 1rem;
   transition: all ease 0.3s;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
 }
 
 /*# sourceMappingURL=main.css.map */
