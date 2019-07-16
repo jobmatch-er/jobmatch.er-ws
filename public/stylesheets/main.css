@@ -552,7 +552,11 @@ body {
   left: 0;
   right: 0;
   z-index: 99;
+<<<<<<< HEAD
   margin-top: 12vh;
+=======
+  margin-top: 20vh;
+>>>>>>> b9c93908fd02080f03e6272e7482a548cb429d99
 }
 .dropdown .select-hide {
   display: none;
@@ -939,7 +943,7 @@ body {
 }
 
 .jobdropdownp {
-  margin-top: 60vh !important;
+  margin-top: 68vh !important;
 }
 
 #employeroryeedropdown {
