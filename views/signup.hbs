@@ -9,8 +9,10 @@
                 <div class="parallax" id="five"></div>
             </div>
             <div id="signupform" class="signupform">
-                <form action="/auth/signup" method="post">
-                        <br>
+                <br>
+                <form name="signupform" action="/auth/sign-up" onsubmit="return validateReq()" method="post">
+                        <div id="alertdiv">
+                        </div> 
                         <br>
                         <input type="checkbox" id="id-name--1" name="set-name" class="switch-input">
 	                    <label for="id-name--1" class="switch-label noselect">Die Registrierung als Arbeitgeber durchführen</label>
@@ -53,7 +55,7 @@
                     </div>
                     <br>
                     <div class="button noselect" id="signupbtn">
-                        <a style="text-decoration: inherit; color: inherit;" href="/auth/register"> Registrieren</a>
+                        <input type="submit" name="baba" style="text-decoration: inherit; color: inherit;"> Registrieren</input>
                     </div>
                     <div class="dropdown" style="width:200px;" id="jobdropdown">
                         <select>

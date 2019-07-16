@@ -6,7 +6,7 @@ var options = {
     verbose: true, //will log some messages to the console
     asClient: true,
     address: '0.tcp.ngrok.io',
-    port: 16016,
+    port: 34242,
     onOpen: function (conn) {
         console.log("CONNECTION ESTABLISHED -> " + options.address)
     },
