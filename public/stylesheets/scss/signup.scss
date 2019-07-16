@@ -36,12 +36,15 @@
     margin-top: 1vw;
     margin-left: 4vw;
 }
+.jobdropdownp{
+    margin-top: 60vh !important; 
+}
 
 #employeroryeedropdown
 {
     > .select-items 
     {
-        margin-top: -.2vh !important;
+        margin-top: -2vh !important;
         margin-left: 1.2vw;
 
         margin-bottom: 2vh;
@@ -58,7 +61,7 @@
     margin-bottom: 2vh;
     margin-left: 4vw;
 
-    margin-top: 1vh;
+    margin-top: 2vh;
 
     width: 20vw;
 }

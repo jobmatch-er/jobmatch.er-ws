@@ -36,8 +36,10 @@ $(document).ready(function () {
                 theme: 'tooltipster-noir',
                 maxWidth: 300
             });
+            $(".select-items").addClass("jobdropdownp")
         } else {
             $("#optional").remove();
+            $(".select-items").removeClass("jobdropdownp")
         }
     })
 });
