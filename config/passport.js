@@ -60,16 +60,16 @@ module.exports = function (passport) {
                         employer.fullname = req.body.fullname
                         employer.birthday = req.body.birthday
                         employer.city = req.body.city
-                        employer.employees = req.body.employees
                         employer.phone = req.body.phone
+                        employer.companyName = req.body.companyName
                         employer.companyEmail = req.body.companyemail
-                        employer.phone = req.body.companyphone
-                        employer.adress = req.body.adress
-                        employer.webpage = req.body.webpage
-                        employer.shortdesc = req.body.shortdesc
+                        employer.companyPhone = req.body.companyPhone
+                        employer.webPage = req.body.webPage
+                        employer.shortDesc = req.body.shortDesc
+                        employer.companyAdress = req.body.companyAdress
 
                         var insertQuery = "INSERT INTO user ( email, password, fullname, birthday, city, phone ) values ('" + email + "','" + password + "','" + req.body.phone + "','" + req.body.birthday + "','" + req.body.city + "','" + req.body.phone + "')";
-                        var insertEmployeeQuery = "INSERT INTO employer_data ( employees, email, phone, webpage, shortdesc, adress ) values ('" + req.body.employees + "','" + req.body.email + "','" + req.body.phone + "','" + req.body.webpage + "','" + req.body.shortdesc + "','" + req.body.adress + "')";
+                        var insertEmployeeQuery = "INSERT INTO employer_data ( companyName , companyEmail, companyPhone, webPage, shortDesc, companyAdress ) values ('" + req.body.companyName + "','" + req.body.companyEmail + "','" + req.body.companyPhone + "','" + req.body.webPage + "','" + req.body.shortDesc + "','" + req.body.companyAdress + "')";
                         console.log(insertQuery);
                         fetcher.sendQuery(insertQuery, function (err, data) {
                             employer.id = data.insertId;
