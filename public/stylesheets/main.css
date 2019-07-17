@@ -552,11 +552,7 @@ body {
   left: 0;
   right: 0;
   z-index: 99;
-<<<<<<< HEAD
-  margin-top: 12vh;
-=======
   margin-top: 20vh;
->>>>>>> b9c93908fd02080f03e6272e7482a548cb429d99
 }
 .dropdown .select-hide {
   display: none;
@@ -651,6 +647,10 @@ body {
 
 .fixed {
   position: fixed !important;
+}
+
+.border {
+  border: 1px solid #9B9B9B;
 }
 
 .center {
@@ -889,6 +889,8 @@ body {
   grid-row-start: 4;
   grid-column-end: 11;
   grid-row-end: 18;
+  padding: 2rem;
+  font-family: "Product Sans", sans-serif !important;
 }
 
 .grid-container {
@@ -918,6 +920,13 @@ body {
   grid-row-start: 4;
   grid-column-end: 24;
   grid-row-end: 18;
+  padding: 2rem;
+  padding-top: -1vh;
+  font-family: "Product Sans", sans-serif !important;
+}
+
+.matchingtitle {
+  margin-left: 0vw;
 }
 
 .signupform {
