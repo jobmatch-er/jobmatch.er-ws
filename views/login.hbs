@@ -18,6 +18,8 @@
             </div>
             <div class="loginform center">
                 <form action="/auth/login" method="post">
+                    {{{failureMsg}}}
+                    <br>
                     <div class="accentbarTitle"></div>
                     <h1 class="logintitle">Login</h1>
                     <div class="custominput">
@@ -41,7 +43,7 @@
                             </td>
                             <td>
                                 <div class="button disabled noselect">
-                                   <a style="text-decoration: inherit; color: inherit;" href="/auth/sign-up"> Registrieren </a> 
+                                   <a style="text-decoration: inherit; color: inherit;" href="/auth/sign-up"> Registrieren </a>
                                 </div>
                             </td>
                         </tr>

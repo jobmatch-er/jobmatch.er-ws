@@ -10,14 +10,14 @@ router.get('/login', function(req, res) {
   if (req.user) {
     res.redirect("/matching");
 } else {
-  res.render('login', { title: 'JobMatch.er | Anmeldung' });
+  res.render('login', { title: 'JobMatch.er | Anmeldung', failureMsg: req.flash("failureMsg") });
 }
 });
 
 router.post('/login',
 passport.authenticate('local-login' , {failureRedirect:'/auth/login', failureFlash: true}),
 function(req, res) {
-  res.redirect('/contact?' + req.user.data.email);
+  res.redirect('/matching');
 });
 
 router.get('/sign-up',
@@ -25,7 +25,7 @@ function(req, res) {
   if (req.user) {
     res.redirect("/auth/login");
 } else {
-  res.render('signup', { title: 'JobMatch.er | Registrierung', failuremsg: req.flash("failuremsg") });
+  res.render('signup', { title: 'JobMatch.er | Registrierung', failureMsg: req.flash("failureMsg") });
 }
 });
 
