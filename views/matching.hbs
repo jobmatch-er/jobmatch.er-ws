@@ -28,42 +28,27 @@
             <div class="parallax" id="four"></div>
             <div class="parallax" id="five"></div>
         </div>
-        <!--
+
         <div class="grid-container">
             <div class="usercard">
                 <div class="matchcardheader">
                     <div class="accentbarTitle"></div>
-                    <h1 class="logintitle matchingtitle">{{{username}}} (Du)</h1>
-                    <p>{{{userage}}} Jahre alt</p>
-                    <p>{{{usercity}}} | bis {{{userradius}}}km</p>
-                    <p>{{{userworktype}}}</p>
+                    <h1 class="logintitle matchingtitle">{{{user.fullname}}} (Du)</h1>
+                    <p>{{{getAge user}}} Jahre alt</p>
+                    <p>{{{user.city}}} | bis {{{user.workradius}}}km</p>
+                    <p>{{{user.worktype}}}</p>
                 </div>
                 <div class="userchipselector"></div>
                 <div class="matchcardchips"></div>
             </div>
+            {{#each data.data}}
             <div class="employercard">
-                <div class="matchcardheader">
-                    <div class="accentbarTitle"></div>
-                    <h1 class="logintitle matchingtitle">{{{companyname}}}</h1>
-                    <p>{{{companywebsite}}}</p>
-                    <p>{{{companycity}}} | ca. {{{companydistance}}}km</p>
-                    <p>{{{compamyadress}}}</p>
-                </div>
-                <div class="matchcardchips"></div>
-                <div class="companyshortdescription">{{{companyshortdescription}}}</div>
-                <div class="companycontact">
-                    <button type="email" class="button noselect">
-                        {{{companyemail}}}
-                    </button>
-                    <button type="email" class="button noselect">
-                        {{{companytelephonenumber}}}
-                    </button>
-                </div>
-                <div class="footer">gefunden auf JobMatch.er</div>
+                {{generate_card}}
             </div>
+            {{/each}}
         </div>
-        -->
-        <div class="grid-container">
+
+  <!--      <div class="grid-container">
             <div class="usercard">
                 <div class="matchcardheader">
                     <div class="accentbarTitle"></div>
@@ -136,7 +121,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </body>
 

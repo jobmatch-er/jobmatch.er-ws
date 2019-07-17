@@ -10,15 +10,6 @@ var options = {
     port: 17616,
     onOpen: function (conn) {
         console.log("CONNECTION ESTABLISHED -> " + options.address)
-        wscb.send({
-            data: "match 'blendercraft.info@gmail.com'"
-        }, function (response) {
-            if (reqInvalid(response)) {
-                console.log(response)
-            } else {
-                console.log(response)
-            }
-        });
     },
     onError: function (conn, error) {
         console.log("ERROR: " + error)
@@ -54,7 +45,7 @@ function sendQuery(query, callback) {
 }
 
 function sendMatcherReq(user, callback){
-    var query = "match " + user.email
+    var query = "match '" + user.data.email + "'"
     wscb.send({
         data: query
     }, function (response) {
@@ -100,5 +91,6 @@ function reqInvalid(data) {
 module.exports = {
     start,
     sendQuery,
-    sendCommand
+    sendCommand,
+    sendMatcherReq
 }

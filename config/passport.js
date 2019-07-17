@@ -63,7 +63,7 @@ module.exports = function (passport) {
                             req.body.chips = "{}"
 
                             var insertQuery = "INSERT INTO user ( email, password, fullname, birthday, city, workradius, workarea, chips, employerdata, phone) values ('" + email + "','" + md5(password) + "','" + req.body.fullname + "','" + req.body.birthdate + "','" + req.body.city + "','" + 0 + "','" + req.body.workarea + "','" + req.body.chips + "','" + employee.employerdata + "','" + req.body.phone + "')";
-                            var insertEmployeeQuery = "INSERT INTO employer_data ( companyName , companyEmail, companyPhone, webPage, shortDesc, companyAdress, jobinfo ) values ('" + req.body.companyName + "','" + req.body.companyEmail + "','" + req.body.companyPhone + "','" + req.body.webPage + "','" + req.body.shortDesc + "','" + req.body.companyAdress + "','" + req.body.jobInfo + "')";
+                            var insertEmployeeQuery = "INSERT INTO employer_data ( companyName , companyEmail, companyPhone, webPage, shortDesc, companyAdress, jobinfo, id ) values ('" + req.body.companyName + "','" + req.body.companyEmail + "','" + req.body.companyPhone + "','" + req.body.webPage + "','" + req.body.shortDesc + "','" + req.body.companyAdress + "','" + req.body.jobInfo + "','" + employer.employerdata + "')";
                             console.log(insertQuery);
                             fetcher.sendCommand(insertQuery, function (err, data) {
                                 employer.id = data.insertId;

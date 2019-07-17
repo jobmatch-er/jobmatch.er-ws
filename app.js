@@ -10,6 +10,7 @@ var bodyParser = require('body-parser')
 var ppconfig = require('./config/passport')
 var session = require('express-session');
 var cookieParser = require('cookie-parser')
+var exphbs = require("express-handlebars");
 
 var indexRouter = require('./routes/index');
 var authRouter = require('./routes/auth');
@@ -25,6 +26,11 @@ app.use(session({ cookie: { maxAge: 60000 },
   saveUninitialized: false}));
 
 // view engine setup
+app.engine("hbs", exphbs({
+  defaultLayout: "layout",
+  extname: ".hbs",
+  helpers: require("./public/scripts/helpers.js").helpers, // same file that gets used on our client
+}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(cookieParser());
@@ -41,6 +47,8 @@ app.use('/', indexRouter);
 app.use('/matching', matchingRouter);
 app.use('/auth', authRouter);
 app.use('/contact', contactRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
