@@ -15,7 +15,6 @@ var exphbs = require("express-handlebars");
 var indexRouter = require('./routes/index');
 var authRouter = require('./routes/auth');
 var matchingRouter = require('./routes/matching');
-var contactRouter = require('./routes/contact');
 
 var app = express();
 fetcher.start();
@@ -46,7 +45,6 @@ ppconfig(passport);
 app.use('/', indexRouter);
 app.use('/matching', matchingRouter);
 app.use('/auth', authRouter);
-app.use('/contact', contactRouter);
 
 
 

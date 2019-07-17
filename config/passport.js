@@ -38,6 +38,22 @@ module.exports = function (passport) {
                     "));
                 } else {
                     console.log("no error")
+                    if(!(password === req.body.confirmpassword)){
+                        return done(null, false, req.flash('failuremsg', "<div id=\"alertdiv\" class=\"alert\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
+                        Passwords do not match!\
+                        </div>\
+                        "));
+                    } else if(validateEmail(email)){
+                        return done(null, false, req.flash('failuremsg', "<div id=\"alertdiv\" class=\"alert\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
+                        Please check your email!\
+                        </div>\
+                        "));
+                    } else if(validateBirthdate(req.body.birthday)){
+                        return done(null, false, req.flash('failuremsg', "<div id=\"alertdiv\" class=\"alert\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
+                        You must be between 18 and 69 years old!\
+                        </div>\
+                        "));
+                    } else {
                     if (req.body.usertype) {
                         console.log("employer")
                         var employer = {};
@@ -98,6 +114,7 @@ module.exports = function (passport) {
                         });
                     }
                 }
+                }
             });
         }));
 
@@ -141,3 +158,12 @@ module.exports = function (passport) {
         }));
 
 };
+
+function validateBirthdate(birthdate){
+   var reg =  /(\d\d.\d\d.(2[0][0][0-1]|1[5-9][0-9][0-9]))/g;
+   return reg.test(birthdate)
+}
+function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
