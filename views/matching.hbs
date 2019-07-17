@@ -41,11 +41,14 @@
                 <div class="userchipselector"></div>
                 <div class="matchcardchips"></div>
             </div>
-            {{#each data.data}}
-            <div class="employercard">
-                {{generate_card}}
+            
+            <div class="employercards">
+                {{#each data.data}}
+                    <div class="employercard">
+                        {{generate_card}}
+                    </div>
+                {{/each}}
             </div>
-            {{/each}}
         </div>
 
   <!--      <div class="grid-container">

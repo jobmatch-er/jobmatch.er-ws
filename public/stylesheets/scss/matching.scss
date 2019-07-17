@@ -57,13 +57,6 @@
 
     overflow: scroll;
 
-    overflow: hidden;
-
-    grid-column-start: 16;
-    grid-row-start: 4;
-    grid-column-end: 24;
-    grid-row-end: 18;
-
     padding: 2rem;
     padding-top: -1vh;
 
@@ -88,4 +81,19 @@
     margin-left: -.1vw;
 
     margin-top: -.4vh;
+}
+
+.companycontact
+{
+    overflow: scroll;
+}
+
+.employercards
+{
+    overflow-y: scroll;
+
+    grid-column-start: 16;
+    grid-row-start: 4;
+    grid-column-end: 24;
+    grid-row-end: 18;
 }
