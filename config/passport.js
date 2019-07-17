@@ -32,7 +32,7 @@ module.exports = function (passport) {
                 console.log(req.body);
                 console.log("above row object");
                 if (!err) {
-                    return done(null, false, req.flash('failuremsg', "<div id=\"alertdiv\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
+                    return done(null, false, req.flash('failuremsg', "<div id=\"alertdiv\" class=\"alert\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
                     Email already taken!\
                     </div>\
                     "));
@@ -119,7 +119,7 @@ module.exports = function (passport) {
                 }
                 if (typeof data === "undefined") {
                     console.log("lost length")
-                    return done(null, false, req.flash('failuremsg', "<div id=\"alertdiv\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
+                    return done(null, false, req.flash('failuremsg', "<div id=\"alertdiv\" class=\"alert\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
                     No User found!\
                     </div>\
                     "));        }
@@ -127,7 +127,7 @@ module.exports = function (passport) {
                 console.log(data);
                 console.log(data.data.password);
                 if (!(data.data.password == md5(password))) {
-                    return done(null, false, req.flash('failuremsg', "<div id=\"alertdiv\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
+                    return done(null, false, req.flash('failuremsg', "<div id=\"alertdiv\" class=\"alert\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
                     Wrong password!\
                     </div>\
                     "));
