@@ -15,11 +15,16 @@ var register = function(Handlebars) {
          return age;
       },
       generate_card: function(){
+        if(!this.employer[0].webpage.startsWith("https://") || !this.employer[0].webpage.startsWith("http://"))
+        {
+            this.employer[0].webpage = "https://" + this.employer[0].webpage;
+        }
+
           return new HandleBars.SafeString(
           " <div class='matchcardheader'>\
                 <div class='accentbarTitle accentbarTitleMatching'></div>\
-                <h1 class='logintitle matchingtitle'>" + this.employer[0].companyname + "</h1>\
-                <p>" + this.employer[0].webpage + "</p>\
+                <h1 class='logintitle matchingtitle'>" + this.employer[0].name + "</h1>\
+                <a href="+ this.employer[0].webpage + ">" + this.employer[0].webpage + "</a>\
                 <p>" + this.city + " | ca. " + this.distanceToUserCity + "km</p>\
                 <p>" + this.employer[0].adress + "</p>\
             </div>\
