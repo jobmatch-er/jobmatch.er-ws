@@ -23,9 +23,9 @@ function(req, res) {
 router.get('/sign-up',
 function(req, res) {
   if (req.user) {
-    res.redirect("/contact");
+    res.redirect("/auth/login");
 } else {
-  res.render('signup', { title: 'JobMatch.er | Registrierung' });
+  res.render('signup', { title: 'JobMatch.er | Registrierung', failuremsg: req.flash("failuremsg") });
 }
 });
 

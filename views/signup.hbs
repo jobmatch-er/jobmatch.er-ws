@@ -10,9 +10,8 @@
             </div>
             <div id="signupform" class="signupform">
                 <br>
-                <form name="signupform" action="/auth/sign-up" onsubmit="return validateReq()" method="post">
-                        <div id="alertdiv">
-                        </div> 
+                <form name="signupform" action="/auth/sign-up" method="post">
+                        {{{failuremsg}}}
                         <br>
                         <input type="checkbox" id="id-name--1" name="usertype" class="switch-input" />
 	                    <label for="id-name--1" class="switch-label noselect">Die Registrierung als Arbeitgeber durchführen</label>
