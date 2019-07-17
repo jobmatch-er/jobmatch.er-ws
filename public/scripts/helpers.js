@@ -17,7 +17,7 @@ var register = function(Handlebars) {
       generate_card: function(){
           return new HandleBars.SafeString(
           " <div class='matchcardheader'>\
-                <div class='accentbarTitle'></div>\
+                <div class='accentbarTitle accentbarTitleMatching'></div>\
                 <h1 class='logintitle matchingtitle'>" + this.employer[0].companyname + "</h1>\
                 <p>" + this.employer[0].webpage + "</p>\
                 <p>" + this.city + " | ca. " + this.distanceToUserCity + "km</p>\
@@ -26,12 +26,20 @@ var register = function(Handlebars) {
             <div class='matchcardchips'></div>\
             <div class='companyshortdescription'>" + this.employer[0].shortdescription + "</div>\
              <div class='companycontact'>\
-                <button type='email' class='button noselect'>\
-                " + this.email + "\
-                </button>\
-                <button type='email' class='button noselect'>\
-                " + this.phone + "\
-                </button>\
+                <table class='matchingbutttontable'>\
+                  <tr>\
+                    <td>\
+                        <button type='email' class='button noselect'>\
+                        " + this.email + "\
+                        </button>\
+                      </td>\
+                      <td>\
+                        <button type='email' class='button noselect'>\
+                        " + this.phone + "\
+                        </button>\
+                    </td>\
+                  </tr>\
+                </table>\
               </div>\
               <div class='footer'>gefunden auf JobMatch.er</div>\
       "
