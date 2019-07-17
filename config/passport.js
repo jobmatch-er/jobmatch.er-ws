@@ -32,7 +32,10 @@ module.exports = function (passport) {
                 console.log(req.body);
                 console.log("above row object");
                 if (!err) {
-                    return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
+                    return done(null, false, req.flash('failuremsg', "<div id=\"alertdiv\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
+                    Email already taken!\
+                    </div>\
+                    "));
                 } else {
                     console.log("no error")
                     if (req.body.usertype) {
@@ -116,14 +119,18 @@ module.exports = function (passport) {
                 }
                 if (typeof data === "undefined") {
                     console.log("lost length")
-                    return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
-                }
+                    return done(null, false, req.flash('failuremsg', "<div id=\"alertdiv\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
+                    No User found!\
+                    </div>\
+                    "));        }
                 console.log(md5(password))
                 console.log(data);
                 console.log(data.data.password);
                 if (!(data.data.password == md5(password))) {
-                    console.log("lost pw")
-                    return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
+                    return done(null, false, req.flash('failuremsg', "<div id=\"alertdiv\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
+                    Wrong password!\
+                    </div>\
+                    "));
                 }
                 return done(null, data);
 

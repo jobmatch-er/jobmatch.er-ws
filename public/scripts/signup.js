@@ -58,20 +58,3 @@ $(document).ready(function () {
         }
     })
 });
-
-function validateReq(){
-    var pass = $('input[name=password]');
-    var repeatpass = $('input[name=repeatpassword]');
-    console.log(pass + " " + repeatpass)
-    if(pass.val() == repeatpass.val()){
-        return true
-    } else {
-        $("#alertdiv").addClass("alert")
-        $("#alertdiv").append("\
-        <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
-                    Passworts do not match!\
-        "
-        )
-        return false
-    }
-}
