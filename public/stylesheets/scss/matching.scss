@@ -16,6 +16,12 @@
     grid-row-start: 4;
     grid-column-end: 11;
     grid-row-end: 18;
+
+    padding: 2rem;
+
+    font-family: 'Product Sans', sans-serif !important;
+
+
 }
 
 .grid-container 
@@ -57,4 +63,15 @@
     grid-row-start: 4;
     grid-column-end: 24;
     grid-row-end: 18;
+
+    padding: 2rem;
+    padding-top: -1vh;
+
+    font-family: 'Product Sans', sans-serif !important;
+
+}
+
+.matchingtitle
+{
+    margin-left: 0vw;
 }

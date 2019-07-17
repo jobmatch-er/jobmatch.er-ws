@@ -649,6 +649,10 @@ body {
   position: fixed !important;
 }
 
+.border {
+  border: 1px solid #9B9B9B;
+}
+
 .center {
   margin: auto;
   width: 50%;
@@ -885,6 +889,8 @@ body {
   grid-row-start: 4;
   grid-column-end: 11;
   grid-row-end: 18;
+  padding: 2rem;
+  font-family: "Product Sans", sans-serif !important;
 }
 
 .grid-container {
@@ -914,6 +920,13 @@ body {
   grid-row-start: 4;
   grid-column-end: 24;
   grid-row-end: 18;
+  padding: 2rem;
+  padding-top: -1vh;
+  font-family: "Product Sans", sans-serif !important;
+}
+
+.matchingtitle {
+  margin-left: 0vw;
 }
 
 .signupform {
