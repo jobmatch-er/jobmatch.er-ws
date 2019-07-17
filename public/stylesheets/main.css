@@ -891,6 +891,7 @@ body {
   grid-row-end: 18;
   padding: 2rem;
   font-family: "Product Sans", sans-serif !important;
+  color: #9B9B9B;
 }
 
 .grid-container {
@@ -923,10 +924,19 @@ body {
   padding: 2rem;
   padding-top: -1vh;
   font-family: "Product Sans", sans-serif !important;
+  color: #9B9B9B;
+  line-height: -0.1vh !important;
 }
 
 .matchingtitle {
   margin-left: 0vw;
+  margin-top: 0vh;
+  margin-bottom: -1.6vh;
+}
+
+.accentbarTitleMatching {
+  margin-left: -0.1vw;
+  margin-top: -0.4vh;
 }
 
 .signupform {

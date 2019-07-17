@@ -21,7 +21,7 @@
 
     font-family: 'Product Sans', sans-serif !important;
 
-
+    color: $font-middle;
 }
 
 .grid-container 
@@ -69,9 +69,23 @@
 
     font-family: 'Product Sans', sans-serif !important;
 
+    color: $font-middle;
+
+    line-height: -.1vh !important;
 }
 
 .matchingtitle
 {
     margin-left: 0vw;
+
+    margin-top: -0vh;
+
+    margin-bottom: -1.6vh;
+}
+
+.accentbarTitleMatching
+{
+    margin-left: -.1vw;
+
+    margin-top: -.4vh;
 }
