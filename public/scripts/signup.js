@@ -1,5 +1,9 @@
 console.log("fddsfgdssdg")
 $(document).ready(function () {
+    $('input[name=workradius]').tooltipster({
+        theme: 'tooltipster-noir',
+        maxWidth: 300
+    });
     const checkbox = document.getElementById('id-name--1')
 
     checkbox.addEventListener('change', (event) => {
@@ -30,6 +34,17 @@ $(document).ready(function () {
                     <input type='text' name='companyAdress' placeholder='Firmenadresse' />\
                     <div class='accentbar'></div>\
                 </div>\
+                <br>\
+                <div class='custominput'>\
+                    <input type='text' name='jobdesc' placeholder='Kurze Beschreibung zum Job' />\
+                    <div class='accentbar'></div>\
+                </div>\
+                <br>\
+                <div class='custominput'>\
+                    <input type='text' name='income' placeholder='monatliches Gehalt' />\
+                    <div class='accentbar'></div>\
+                </div>\
+                <br>\
                 </div>\
             ");
             $('#desc').tooltipster({
@@ -47,7 +62,6 @@ $(document).ready(function () {
 function validateReq(){
     var pass = $('input[name=password]');
     var repeatpass = $('input[name=repeatpassword]');
-    alert("YALLLLA")
     console.log(pass + " " + repeatpass)
     if(pass.val() == repeatpass.val()){
         return true

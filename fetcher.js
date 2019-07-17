@@ -2,13 +2,23 @@ const WebSockets_Callback = require('wscb');
 var wscb = WebSockets_Callback;
 var _ = require('underscore')
 
+// Set options for Websocket connection
 var options = {
-    verbose: true, //will log some messages to the console
+    verbose: true,
     asClient: true,
     address: '0.tcp.ngrok.io',
-    port: 34242,
+    port: 17616,
     onOpen: function (conn) {
         console.log("CONNECTION ESTABLISHED -> " + options.address)
+        wscb.send({
+            data: "match 'blendercraft.info@gmail.com'"
+        }, function (response) {
+            if (reqInvalid(response)) {
+                console.log(response)
+            } else {
+                console.log(response)
+            }
+        });
     },
     onError: function (conn, error) {
         console.log("ERROR: " + error)
@@ -22,23 +32,63 @@ var start = function () {
     wscb = new WebSockets_Callback(options);
 }
 
+/**
+ * Generates server-readable query and transmits it over a websocket\
+ * -> sendMatcherReq(), sendCommand()
+ *
+ * @param {String} query
+ * @param {function} callback
+ */
 function sendQuery(query, callback) {
     console.log("query " + query.toString().replace(/ /g, "_/"));
     var query = "query " + query.toString().replace(/ /g, "_/")
     wscb.send({
         data: query
     }, function (response) {
-        console.log("eins")
         if (reqInvalid(response)) {
-            callback(response.error, null)
+            callback(true, response)
         } else {
             callback(null, response)
         }
     });
 }
 
+function sendMatcherReq(user, callback){
+    var query = "match " + user.email
+    wscb.send({
+        data: query
+    }, function (response) {
+        if (reqInvalid(response)) {
+            callback(true, response)
+        } else {
+            callback(null, response)
+        }
+    });
+}
+
+function sendCommand(query, callback) {
+    console.log("command " + query.toString().replace(/ /g, "_/"));
+    var query = "command " + query.toString().replace(/ /g, "_/")
+    wscb.send({
+        data: query
+    }, function (response) {
+        if (reqInvalid(response)) {
+            callback(true, response)
+        } else {
+            callback(null, response)
+        }
+    });
+}
+
+
+/**
+ * Tests if the response contains "error" as a data property
+ *
+ * @param {*} data
+ * @returns boolean
+ */
 function reqInvalid(data) {
-    if (_.has(data, "error")) {
+    if (data.data == "error") {
         console.log("fddfsdf")
         return true
     } else {
@@ -47,27 +97,8 @@ function reqInvalid(data) {
     }
 }
 
-function getID(data) {
-    var arr = data.split(" ");
-    return arr[0]
-}
-
-function waitForSocketConnection(socket, callback) {
-    setTimeout(
-        function () {
-            if (socket.readyState === 1) {
-                console.log("Connection is made")
-                if (callback != null) {
-                    callback();
-                }
-            } else {
-                console.log("wait for connection...")
-                waitForSocketConnection(socket, callback);
-            }
-
-        }, 5); // wait 5 milisecond for the connection...
-}
 module.exports = {
     start,
     sendQuery,
+    sendCommand
 }

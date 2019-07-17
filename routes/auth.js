@@ -3,10 +3,12 @@ var router = express.Router();
 var passport = require('passport')
 
 
-/* GET home page. */
+/* Some routes for authentication to be sure, 
+*  that we are telling the right people the jobs
+*/
 router.get('/login', function(req, res) {
   if (req.user) {
-    res.redirect("/contact");
+    res.redirect("/matching");
 } else {
   res.render('login', { title: 'JobMatch.er | Anmeldung' });
 }

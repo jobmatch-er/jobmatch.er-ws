@@ -3,16 +3,12 @@ var fetcher = require('../fetcher.js')
 var app = require('../app.js')
 var md5 = require('md5')
 
-// expose this function to our app using module.exports
 module.exports = function (passport) {
 
     // =========================================================================
     // passport session setup ==================================================
     // =========================================================================
-    // required for persistent login sessions
-    // passport needs ability to serialize and unserialize users out of session
 
-    // used to serialize the user for the session
     passport.serializeUser(function (user, done) {
         done(null, user);
     });
@@ -22,77 +18,79 @@ module.exports = function (passport) {
         done(null, user)
     });
 
-
-    // =========================================================================
-    // LOCAL SIGNUP ============================================================
-    // =========================================================================
-    // we are using named strategies since we have one for login and one for signup
-    // by default, if there was no name, it would just be called 'local'
-
+/* Create local username-password sign-up strategy and check if email exists, if not, 
+*  proceed to check which usertype the to be registrated user has and send a INSERT query to Backend
+*/
     passport.use('local-signup', new LocalStrategy({
-            // by default, local strategy uses username and password, we will override with email
+            
             usernameField: 'email',
             passwordField: 'password',
-            passReqToCallback: true // allows us to pass back the entire request to the callback
+            passReqToCallback: true
         },
         function (req, email, password, done) {
-            // find a user whose email is the same as the forms email
-            // we are checking to see if the user trying to login already exists
-            fetcher.sendQuery("select * from users where email = '" + email + "'", function (err, data) {
-                console.log(data);
+            fetcher.sendQuery("select * from user where email = '" + email + "'", function (err, data) {
+                console.log(req.body);
                 console.log("above row object");
-                if (err)
-                    console.log(err)
-                done(err);
-                if (!(typeof data === "undefined")) {
+                if (!err) {
                     return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
                 } else {
-                    if (req.body.usertype == "Arbeitgeber") {
-                        var employer;
+                    console.log("no error")
+                    if (req.body.usertype) {
+                        console.log("employer")
+                        var employer = {};
                         var idQuery = "SELECT COUNT(*) FROM employer_data"
                         fetcher.sendQuery(idQuery, function (err, data) {
                             console.log(data)
                             employer.employerdata = parseInt(data[0]) + 1;
-                            return done(null, newUserMysql);
-                        });
-                        employer.email = email;
-                        employer.password = password;
-                        employer.fullname = req.body.fullname
-                        employer.birthday = req.body.birthday
-                        employer.city = req.body.city
-                        employer.phone = req.body.phone
-                        employer.companyName = req.body.companyName
-                        employer.companyEmail = req.body.companyemail
-                        employer.companyPhone = req.body.companyPhone
-                        employer.webPage = req.body.webPage
-                        employer.shortDesc = req.body.shortDesc
-                        employer.companyAdress = req.body.companyAdress
+                            console.log(email)
+                            employer.email = email;
+                            employer.password = password;
+                            employer.fullname = req.body.fullname
+                            employer.birthday = req.body.birthday
+                            employer.city = req.body.city
+                            employer.phone = req.body.phone
+                            employer.companyName = req.body.companyName
+                            employer.companyEmail = req.body.companyemail
+                            employer.companyPhone = req.body.companyPhone
+                            employer.webPage = req.body.webPage
+                            employer.shortDesc = req.body.shortDesc
+                            employer.jobInfo = {
+                                "jobdesc": req.body.jobdesc,
+                                "income": req.body.income,
+                                "chips": req.body.chips
+                            }
+                            employer.companyAdress = req.body.companyAdress
+                            req.body.chips = "{}"
 
-                        var insertQuery = "INSERT INTO user ( email, password, fullname, birthday, city, phone ) values ('" + email + "','" + password + "','" + req.body.phone + "','" + req.body.birthday + "','" + req.body.city + "','" + req.body.phone + "')";
-                        var insertEmployeeQuery = "INSERT INTO employer_data ( companyName , companyEmail, companyPhone, webPage, shortDesc, companyAdress ) values ('" + req.body.companyName + "','" + req.body.companyEmail + "','" + req.body.companyPhone + "','" + req.body.webPage + "','" + req.body.shortDesc + "','" + req.body.companyAdress + "')";
-                        console.log(insertQuery);
-                        fetcher.sendQuery(insertQuery, function (err, data) {
-                            employer.id = data.insertId;
-                            fetcher.sendQuery(insertEmployeeQuery, function (err, data) {
-                                return done(null, employer);
+                            var insertQuery = "INSERT INTO user ( email, password, fullname, birthday, city, workradius, workarea, chips, employerdata, phone) values ('" + email + "','" + md5(password) + "','" + req.body.fullname + "','" + req.body.birthdate + "','" + req.body.city + "','" + 0 + "','" + req.body.workarea + "','" + req.body.chips + "','" + employee.employerdata + "','" + req.body.phone + "')";
+                            var insertEmployeeQuery = "INSERT INTO employer_data ( companyName , companyEmail, companyPhone, webPage, shortDesc, companyAdress, jobinfo ) values ('" + req.body.companyName + "','" + req.body.companyEmail + "','" + req.body.companyPhone + "','" + req.body.webPage + "','" + req.body.shortDesc + "','" + req.body.companyAdress + "','" + req.body.jobInfo + "')";
+                            console.log(insertQuery);
+                            fetcher.sendCommand(insertQuery, function (err, data) {
+                                employer.id = data.insertId;
+                                fetcher.sendCommand(insertEmployeeQuery, function (err, data) {
+                                    return done(null, employer);
+                                });
                             });
                         });
                     } else {
-                        var employee;
+                        console.log("user")
+                        var employee = {};
                         employee.email = email;
                         employee.password = password;
-                        employer.fullname = req.body.fullname
-                        employee.birthday = req.body.birthday
+                        employee.fullname = req.body.fullname
+                        employee.birthday = req.body.birthdate
                         employee.city = req.body.city
                         employee.workarea = req.body.workarea
                         employee.chips = req.body.chips
+                        req.body.chips = "{}"
+                        employee.workradius = req.body.workradius;
                         employee.phone = req.body.phone
                         employee.employerdata = -1
 
-                        var insertQuery = "INSERT INTO user ( email, password, birthday, city, workarea, chips, employerdata ) values ('" + email + "','" + password + "','" + req.body.birthday + "','" + req.body.city + "','" + req.body.workarea + "','" + req.body.chips + "','" + req.body.employerdata + "')";
+                        var insertQuery = "INSERT INTO user ( email, password, fullname, birthday, city, workradius, workarea, chips, employerdata, phone) values ('" + email + "','" + md5(password) + "','" + req.body.fullname + "','" + req.body.birthdate + "','" + req.body.city + "','" + req.body.workradius + "','" + req.body.workarea + "','" + req.body.chips + "','" + employee.employerdata + "','" + req.body.phone + "')";
                         console.log(insertQuery);
-                        fetcher.sendQuery(insertQuery, function (err, data) {
-                            newUserMysql.id = data.insertId;
+                        fetcher.sendCommand(insertQuery, function (err, data) {
+                            employee.id = data.insertId;
                             return done(null, employee);
                         });
                     }
@@ -100,12 +98,10 @@ module.exports = function (passport) {
             });
         }));
 
-    // =========================================================================
-    // LOCAL LOGIN =============================================================
-    // =========================================================================
-    // we are using named strategies since we have one for login and one for signup
-    // by default, if there was no name, it would just be called 'local'
 
+/* Create local username-password login strategy, check if user exists, if yes, check if hashed passwords match and 
+*  proceed to send User object to passport
+*/
     passport.use('local-login', new LocalStrategy({
             usernameField: 'email',
             passwordField: 'password',
