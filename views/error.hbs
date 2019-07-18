@@ -1,3 +1,16 @@
-<h1>{{message}}</h1>
-<h2>{{error.status}}</h2>
-<pre>{{error.stack}}</pre>
+<body onload="error();">
+    <h1>{{message}}</h1>
+    <h2>{{error.status}}</h2>
+    <pre>{{error.stack}}</pre>
+    <a id="errorlink"></a>
+    <script>
+        function error()
+        {
+            var link = document.getElementById("errorlink");
+            var message = "{{message}}";
+
+            link.innerHTML = "stackoverflow skateMINZIG";
+            link.setAttribute('href', "https://stackoverflow.com/search?q=" + message.replace(" ", "+"));
+        }
+    </script>
+</body>
