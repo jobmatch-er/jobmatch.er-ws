@@ -391,12 +391,6 @@
   font-family: "Product Sans", sans-serif !important;
 }
 
-nobr {
-  white-space: nowrap;
-  hyphens: none;
-  display: inline-block;
-}
-
 body {
   background-color: #fff;
   padding: 0;
@@ -981,6 +975,11 @@ body {
 
 .nav-wrapper {
   background-color: #ff782b;
+}
+
+.nomatches {
+  color: #fff;
+  font-size: 2rem;
 }
 
 .signupform {
