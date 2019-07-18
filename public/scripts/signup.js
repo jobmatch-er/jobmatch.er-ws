@@ -52,9 +52,11 @@ $(document).ready(function () {
                 maxWidth: 300
             });
             $(".select-items").addClass("jobdropdownp")
+            $("input[name=workradius]").parent().css("display", "none");
         } else {
             $("#optional").remove();
             $(".select-items").removeClass("jobdropdownp")
+            $("input[name=workradius]").parent().css("display", "block");
         }
     })
 });

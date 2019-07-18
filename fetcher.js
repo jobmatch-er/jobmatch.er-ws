@@ -6,8 +6,8 @@ var _ = require('underscore')
 var options = {
     verbose: true,
     asClient: true,
-    address: 'localhost',
-    port: 54345,
+    address: '0.tcp.ngrok.io',
+    port: 10131,
     onOpen: function (conn) {
         console.log("CONNECTION ESTABLISHED -> " + options.address)
     },
@@ -32,7 +32,7 @@ var start = function () {
  */
 function sendQuery(query, callback) {
     console.log("query " + query.toString().replace(/ /g, "_/"));
-    var query = "query " + query.toString().replace(/ /g, "_/")
+    query = "query " + query.toString().replace(/ /g, "_/")
     wscb.send({
         data: query
     }, function (response) {
@@ -79,7 +79,7 @@ function sendCommand(query, callback) {
  * @returns boolean
  */
 function reqInvalid(data) {
-    if (data.data == "error") {
+    if (data.data === "error") {
         console.log("fddfsdf")
         return true
     } else {
