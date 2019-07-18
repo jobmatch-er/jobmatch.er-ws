@@ -90,7 +90,7 @@ module.exports = function (passport) {
                                 employer.jobInfo.chips[4] = {"name": "parttime"}
                             }
                             employer.companyAdress = req.body.companyAdress;
-                            var insertQuery = "INSERT INTO user ( email, password, fullname, birthday, city, workradius, workarea, chips, employerdata, phone) values ('" + email + "','" + md5(password) + "','" + req.body.fullname + "','" + req.body.birthdate + "','" + req.body.city + "','" + 0 + "','" + req.body.workarea + "','" + JSON.stringify(employer.chips) + "','" + employer.employerdata + "','" + req.body.phone + "')";
+                            var insertQuery = "INSERT INTO user ( email, password, fullname, birthday, city, workradius, workarea, chips, employerdata, phone) values ('" + email + "','" + md5(password) + "','" + req.body.fullname + "','" + req.body.birthdate + "','" + req.body.city + "','" + 0 + "','" + req.body.workarea + "','" + {} + "','" + employer.employerdata + "','" + req.body.phone + "')";
                             var insertEmployeeQuery = "INSERT INTO employer_data ( name , email, phone, webpage, shortdescription, adress, jobinfo, id ) values ('" + req.body.companyName + "','" + req.body.companyEmail + "','" + 0 + "','" + req.body.webPage + "','" + req.body.shortDesc + "','" + req.body.companyAdress + "','" + JSON.stringify(employer.jobInfo) + "','" + employer.employerdata + "')";
                             console.log(insertQuery);
                             fetcher.sendCommand(insertQuery, function (err, data) {
