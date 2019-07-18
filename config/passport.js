@@ -38,7 +38,7 @@ module.exports = function (passport) {
                     "));
                 } else {
                     console.log("no error");
-                    if(!(password === req.body.confirmpassword)){
+                    if(!(password === req.body.repeatpassword)){
                         return done(null, false, req.flash('failureMsg', "<div id=\"alertdiv\" class=\"alert\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
                         Passwords do not match!\
                         </div>\
@@ -48,7 +48,7 @@ module.exports = function (passport) {
                         Please check your email!\
                         </div>\
                         "));
-                    } else if(validateBirthdate(req.body.birthday)){
+                    } else if(validateBirthdate(req.body.birthdate)){
                         return done(null, false, req.flash('failureMsg', "<div id=\"alertdiv\" class=\"alert\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
                         You must be between 18 and 69 years old!\
                         </div>\
@@ -60,7 +60,7 @@ module.exports = function (passport) {
                         var idQuery = "SELECT COUNT(*) FROM employer_data";
                         fetcher.sendQuery(idQuery, function (err, data) {
                             console.log(data);
-                            employer.employerdata = parseInt(data[0]) + 1;
+                            employer.employerdata = parseInt(data.data['COUNT(*)'] ) + 1;
                             console.log(email);
                             employer.email = email;
                             employer.password = password;
@@ -81,8 +81,8 @@ module.exports = function (passport) {
                             employer.companyAdress = req.body.companyAdress;
                             req.body.chips = "{}";
 
-                            var insertQuery = "INSERT INTO user ( email, password, fullname, birthday, city, workradius, workarea, chips, employerdata, phone) values ('" + email + "','" + md5(password) + "','" + req.body.fullname + "','" + req.body.birthdate + "','" + req.body.city + "','" + 0 + "','" + req.body.workarea + "','" + req.body.chips + "','" + employee.employerdata + "','" + req.body.phone + "')";
-                            var insertEmployeeQuery = "INSERT INTO employer_data ( name , email, phone, webpage, shortdescription, adress, jobinfo, id ) values ('" + req.body.companyName + "','" + req.body.companyEmail + "','" + req.body.companyPhone + "','" + req.body.webPage + "','" + req.body.shortDesc + "','" + req.body.companyAdress + "','" + req.body.jobInfo + "','" + employer.employerdata + "')";
+                            var insertQuery = "INSERT INTO user ( email, password, fullname, birthday, city, workradius, workarea, chips, employerdata, phone) values ('" + email + "','" + md5(password) + "','" + req.body.fullname + "','" + req.body.birthdate + "','" + req.body.city + "','" + 0 + "','" + req.body.workarea + "','" + req.body.chips + "','" + employer.employerdata + "','" + req.body.phone + "')";
+                            var insertEmployeeQuery = "INSERT INTO employer_data ( name , email, phone, webpage, shortdescription, adress, jobinfo, id ) values ('" + req.body.companyName + "','" + req.body.companyEmail + "','" + 0 + "','" + req.body.webPage + "','" + req.body.shortDesc + "','" + req.body.companyAdress + "','" + JSON.stringify(employer.jobInfo) + "','" + employer.employerdata + "')";
                             console.log(insertQuery);
                             fetcher.sendCommand(insertQuery, function (err, data) {
                                 employer.id = data.insertId;
@@ -143,7 +143,7 @@ module.exports = function (passport) {
                 console.log(md5(password));
                 console.log(data);
                 console.log(data.data.password);
-                if (!(data.data.password === md5(password))) {
+                if (!(data.data.password == md5(password))) {
                     return done(null, false, req.flash('failureMsg', "<div id=\"alertdiv\" class=\"alert\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
                     Wrong password!\
                     </div>\
@@ -161,9 +161,9 @@ module.exports = function (passport) {
 
 function validateBirthdate(birthdate){
    var reg =  /(\d\d.\d\d.(2[0][0][0-1]|1[5-9][0-9][0-9]))/g;
-   return reg.test(birthdate)
+   return !reg.test(birthdate)
 }
 function validateEmail(email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
+    return !re.test(email);
   }

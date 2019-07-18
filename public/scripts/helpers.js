@@ -34,12 +34,12 @@ var register = function(Handlebars) {
                 <table class='matchingbutttontable'>\
                   <tr>\
                     <td>\
-                        <button type='email' class='button noselect contactbtn'>\
+                        <button onclick=\"M.toast({html: 'Email kopiert'})\" data-clipboard-text=" + this.email + " type='email' class='button noselect contactbtn'>\
                         " + this.email + "\
                         </button>\
                       </td>\
                       <td>\
-                        <button type='email' class='button noselect contactbtn'>\
+                        <button onclick=\"M.toast({html: 'Telefonnummer kopiert'})\" data-clipboard-text=" + this.phone + " type='email' class='button noselect contactbtn'>\
                         " + this.phone + "\
                         </button>\
                     </td>\

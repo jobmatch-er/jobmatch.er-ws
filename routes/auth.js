@@ -32,7 +32,7 @@ function(req, res) {
 router.post('/sign-up',
 passport.authenticate('local-signup' , {failureRedirect:'/auth/sign-up', failureFlash: true}),
 function(req, res) {
-  res.redirect('/login');
+  res.redirect('/auth/login');
 });
 
 router.post('/logout',
