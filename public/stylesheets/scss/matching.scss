@@ -115,6 +115,8 @@
 .contactbtn
 {
     position: inherit !important;
+
+    box-shadow: none !important;
 }
 
 .webpagetitlematching
@@ -122,4 +124,19 @@
     margin-top: 3vh;
 
     color: $accent;
+}
+
+.matchingbutttontable
+{
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    border-radius: 5px;
+
+    @include shadow();
+}
+
+.footer
+{
+    
 }
