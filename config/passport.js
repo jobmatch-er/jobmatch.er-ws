@@ -104,7 +104,7 @@ module.exports = function (passport) {
                         req.body.chips = "{}";
                         employee.workradius = req.body.workradius;
                         employee.phone = req.body.phone;
-                        employee.employerdata = -1;
+                        employee.employerdata = 0;
 
                         var insertQuery = "INSERT INTO user ( email, password, fullname, birthday, city, workradius, workarea, chips, employerdata, phone) values ('" + email + "','" + md5(password) + "','" + req.body.fullname + "','" + req.body.birthdate + "','" + req.body.city + "','" + req.body.workradius + "','" + req.body.workarea + "','" + req.body.chips + "','" + employee.employerdata + "','" + req.body.phone + "')";
                         console.log(insertQuery);

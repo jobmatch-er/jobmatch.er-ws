@@ -1,6 +1,10 @@
-html {
+*:not(.material-icons)
+{
     font-family: 'Product Sans', sans-serif !important;
+
+    //font-weight: 300;
 }
+
 
 body {
     background-color: $white;
@@ -9,12 +13,6 @@ body {
     margin: 0;
 }
 
-*:not(material-icons)
-{
-    font-family: 'Product Sans', sans-serif !important;
-
-    //font-weight: 300;
-}
 
 
 .jobmatcher-background {
