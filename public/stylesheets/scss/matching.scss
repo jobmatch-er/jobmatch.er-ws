@@ -147,3 +147,17 @@
 
     font-size: 2rem;
 }
+
+.reload
+{
+    background: $white;
+
+    grid-column-start: 13;
+    grid-row-start: 10;
+    grid-column-end: 14;
+    grid-row-end: 11;
+
+    z-index: 50;
+
+    @include shadow();
+}
