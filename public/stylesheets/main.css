@@ -982,6 +982,11 @@ body {
   font-size: 2rem;
 }
 
+.nav-mobile {
+  height: inherit !important;
+  width: 10vw;
+}
+
 .signupform {
   margin-right: 20vw;
   height: 70vh;
