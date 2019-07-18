@@ -24,7 +24,7 @@ var register = function(Handlebars) {
           " <div class='matchcardheader'>\
                 <div class='accentbarTitle accentbarTitleMatching'></div>\
                 <h1 class='logintitle matchingtitle'>" + this.employer[0].name + "</h1>\
-                <a href="+ this.employer[0].webpage + ">" + this.employer[0].webpage + "</a>\
+                <a href="+ this.employer[0].webpage + " class='webpagetitlematching'>" + this.employer[0].webpage + "</a>\
                 <p>" + this.city + " | ca. " + this.distanceToUserCity + "km</p>\
                 <p>" + this.employer[0].adress + "</p>\
             </div>\
@@ -34,12 +34,12 @@ var register = function(Handlebars) {
                 <table class='matchingbutttontable'>\
                   <tr>\
                     <td>\
-                        <button type='email' class='button noselect'>\
+                        <button type='email' class='button noselect contactbtn'>\
                         " + this.email + "\
                         </button>\
                       </td>\
                       <td>\
-                        <button type='email' class='button noselect'>\
+                        <button type='email' class='button noselect contactbtn'>\
                         " + this.phone + "\
                         </button>\
                     </td>\

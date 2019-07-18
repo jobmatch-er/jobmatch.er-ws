@@ -6,8 +6,8 @@ var _ = require('underscore')
 var options = {
     verbose: true,
     asClient: true,
-    address: '0.tcp.ngrok.io',
-    port: 17616,
+    address: 'localhost',
+    port: 54345,
     onOpen: function (conn) {
         console.log("CONNECTION ESTABLISHED -> " + options.address)
     },

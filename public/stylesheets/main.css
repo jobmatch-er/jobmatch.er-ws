@@ -653,6 +653,10 @@ body {
   border: 1px solid #9B9B9B;
 }
 
+.alert {
+  border-radius: 2rem;
+}
+
 .center {
   margin: auto;
   width: 50%;
@@ -707,6 +711,7 @@ body {
   box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
   z-index: 10;
   position: fixed;
+  overflow: scroll;
 }
 
 .logintitle {
@@ -714,6 +719,7 @@ body {
   color: #707070;
   font-weight: inherit;
   font-size: 2.5rem;
+  margin-top: 0.1vh;
 }
 
 .custominput {
@@ -911,27 +917,28 @@ body {
 .employercard {
   background-color: #fff;
   border-radius: 30px;
-  -webkit-box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
-  -moz-box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
-  box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
   z-index: 30;
   overflow: scroll;
   padding: 2rem;
   padding-top: -1vh;
   font-family: "Product Sans", sans-serif !important;
   color: #9B9B9B;
-  line-height: -0.1vh !important;
+  line-height: -2vh !important;
+  margin-bottom: 3vh;
+  height: 52vh;
+  font-size: 1.2rem;
 }
 
 .matchingtitle {
   margin-left: 0vw;
   margin-top: 0vh;
-  margin-bottom: -1.6vh;
+  margin-bottom: 0.5vh;
 }
 
 .accentbarTitleMatching {
-  margin-left: -0.1vw;
+  margin-left: -0.01vw;
   margin-top: -0.4vh;
+  position: inherit !important;
 }
 
 .companycontact {
@@ -944,6 +951,20 @@ body {
   grid-row-start: 4;
   grid-column-end: 24;
   grid-row-end: 18;
+  background: transparent;
+  border-radius: 30px;
+  -webkit-box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
+  box-shadow: 0px 6px 38px 2px rgba(0, 0, 0, 0.22);
+}
+
+.contactbtn {
+  position: inherit !important;
+}
+
+.webpagetitlematching {
+  margin-top: 3vh;
+  color: #ff782b;
 }
 
 .signupform {

@@ -51,7 +51,7 @@
 
     border-radius: 30px;
 
-    @include shadow();
+    //@include shadow();
 
     z-index: 30;
 
@@ -64,7 +64,13 @@
 
     color: $font-middle;
 
-    line-height: -.1vh !important;
+    line-height: -2vh !important;
+
+    margin-bottom: 3vh;
+
+    height: 52vh;
+
+    font-size: 1.2rem;
 }
 
 .matchingtitle
@@ -73,14 +79,16 @@
 
     margin-top: -0vh;
 
-    margin-bottom: -1.6vh;
+    margin-bottom: .5vh;
 }
 
 .accentbarTitleMatching
 {
-    margin-left: -.1vw;
+    margin-left: -.01vw;
 
     margin-top: -.4vh;
+
+    position: inherit !important;
 }
 
 .companycontact
@@ -96,4 +104,22 @@
     grid-row-start: 4;
     grid-column-end: 24;
     grid-row-end: 18;
+
+    background: transparent;
+
+    border-radius: 30px;
+
+    @include shadow();
+}
+
+.contactbtn
+{
+    position: inherit !important;
+}
+
+.webpagetitlematching
+{
+    margin-top: 3vh;
+
+    color: $accent;
 }
