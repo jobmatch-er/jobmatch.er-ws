@@ -76,12 +76,21 @@ module.exports = function (passport) {
                             employer.jobInfo = {
                                 "jobdesc": req.body.jobdesc,
                                 "income": req.body.income,
-                                "chips": req.body.chips
+                                "chips": []
                             };
+                            if(req.body.chip1){
+                                employer.jobInfo.chips[0] = {"name": "temporaryContract"}
+                            } else if(req.body.chip2){
+                                employer.jobInfo.chips[1] = {"name": "permanentContract"}
+                            } else if(req.body.chip3){
+                                employer.jobInfo.chips[2] = {"name": "internship"}
+                            } else if(req.body.chip4){
+                                employer.jobInfo.chips[3] = {"name": "fulltime"}
+                            } else if(req.body.chip5){
+                                employer.jobInfo.chips[4] = {"name": "parttime"}
+                            }
                             employer.companyAdress = req.body.companyAdress;
-                            req.body.chips = "{}";
-
-                            var insertQuery = "INSERT INTO user ( email, password, fullname, birthday, city, workradius, workarea, chips, employerdata, phone) values ('" + email + "','" + md5(password) + "','" + req.body.fullname + "','" + req.body.birthdate + "','" + req.body.city + "','" + 0 + "','" + req.body.workarea + "','" + req.body.chips + "','" + employer.employerdata + "','" + req.body.phone + "')";
+                            var insertQuery = "INSERT INTO user ( email, password, fullname, birthday, city, workradius, workarea, chips, employerdata, phone) values ('" + email + "','" + md5(password) + "','" + req.body.fullname + "','" + req.body.birthdate + "','" + req.body.city + "','" + 0 + "','" + req.body.workarea + "','" + JSON.stringify(employer.chips) + "','" + employer.employerdata + "','" + req.body.phone + "')";
                             var insertEmployeeQuery = "INSERT INTO employer_data ( name , email, phone, webpage, shortdescription, adress, jobinfo, id ) values ('" + req.body.companyName + "','" + req.body.companyEmail + "','" + 0 + "','" + req.body.webPage + "','" + req.body.shortDesc + "','" + req.body.companyAdress + "','" + JSON.stringify(employer.jobInfo) + "','" + employer.employerdata + "')";
                             console.log(insertQuery);
                             fetcher.sendCommand(insertQuery, function (err, data) {
@@ -100,13 +109,22 @@ module.exports = function (passport) {
                         employee.birthday = req.body.birthdate;
                         employee.city = req.body.city;
                         employee.workarea = req.body.workarea;
-                        employee.chips = req.body.chips;
-                        req.body.chips = "{}";
+                        if(req.body.chip1){
+                            employee.chips[0] = {"name": "temporaryContract"}
+                        } else if(req.body.chip2){
+                            employee.chips[1] = {"name": "permanentContract"}
+                        } else if(req.body.chip3){
+                            employee.chips[2] = {"name": "internship"}
+                        } else if(req.body.chip4){
+                            employee.chips[3] = {"name": "fulltime"}
+                        } else if(req.body.chip5){
+                            employee.chips[4] = {"name": "parttime"}
+                        }
                         employee.workradius = req.body.workradius;
                         employee.phone = req.body.phone;
                         employee.employerdata = 0;
 
-                        var insertQuery = "INSERT INTO user ( email, password, fullname, birthday, city, workradius, workarea, chips, employerdata, phone) values ('" + email + "','" + md5(password) + "','" + req.body.fullname + "','" + req.body.birthdate + "','" + req.body.city + "','" + req.body.workradius + "','" + req.body.workarea + "','" + req.body.chips + "','" + employee.employerdata + "','" + req.body.phone + "')";
+                        var insertQuery = "INSERT INTO user ( email, password, fullname, birthday, city, workradius, workarea, chips, employerdata, phone) values ('" + email + "','" + md5(password) + "','" + req.body.fullname + "','" + req.body.birthdate + "','" + req.body.city + "','" + req.body.workradius + "','" + req.body.workarea + "','" + JSON.stringify(employee.chips) + "','" + employee.employerdata + "','" + req.body.phone + "')";
                         console.log(insertQuery);
                         fetcher.sendCommand(insertQuery, function (err, data) {
                             employee.id = data.insertId;
