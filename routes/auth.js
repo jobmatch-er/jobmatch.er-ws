@@ -38,7 +38,7 @@ function(req, res) {
 router.post('/logout',
 function(req, res) {
   req.logOut();
-  req.redirect("/");
+  res.redirect("/");
 });
 
 module.exports = router;

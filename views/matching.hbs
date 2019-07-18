@@ -9,15 +9,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
-    <nav class="fixed">
-        <form action="/auth/logout" method="post">
+    <nav class="fixed" style="z-index: 300;">
+
         <div class="nav-wrapper">
             <a href="#" class="brand-logo">&nbsp;&nbsp;&nbsp;jobmatch.er</a>
             <ul id="nav-mobile" class="right">
-                <li><a href="javascript:" onclick="parentNode.submit();"><i class="material-icons left">exit_to_app</i>abmelden</a></li>
+                <form action="/auth/logout" method="post">
+                <li><a href="javascript:" onclick="logout(this);"><i class="material-icons left">exit_to_app</i>abmelden</a></li>
+                </form>
             </ul>
         </div>
-        </form>
+
     </nav>
 
 
@@ -138,5 +140,9 @@
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
     new ClipboardJS('.contactbtn');
+    function logout(event){
+        console.log(event)
+        event.parentNode.parentNode.submit()
+    }
 </script>
 </html>

@@ -32,24 +32,24 @@ module.exports = function (passport) {
                 console.log(req.body);
                 console.log("above row object");
                 if (!err) {
-                    return done(null, false, req.flash('failureMsg', "<div id=\"alertdiv\" class=\"alert\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
+                    return done(null, false, req.flash('failureMsg', "<div id=\"alertdiv\" class=\"alert\">\
                     Email already taken!\
                     </div>\
                     "));
                 } else {
                     console.log("no error");
                     if(!(password === req.body.repeatpassword)){
-                        return done(null, false, req.flash('failureMsg', "<div id=\"alertdiv\" class=\"alert\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
+                        return done(null, false, req.flash('failureMsg', "<div id=\"alertdiv\" class=\"alert\">\
                         Passwords do not match!\
                         </div>\
                         "));
                     } else if(validateEmail(email)){
-                        return done(null, false, req.flash('failureMsg', "<div id=\"alertdiv\" class=\"alert\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
+                        return done(null, false, req.flash('failureMsg', "<div id=\"alertdiv\" class=\"alert\">\
                         Please check your email!\
                         </div>\
                         "));
                     } else if(validateBirthdate(req.body.birthdate)){
-                        return done(null, false, req.flash('failureMsg', "<div id=\"alertdiv\" class=\"alert\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
+                        return done(null, false, req.flash('failureMsg', "<div id=\"alertdiv\" class=\"alert\">\
                         You must be between 18 and 69 years old!\
                         </div>\
                         "));
@@ -132,11 +132,14 @@ module.exports = function (passport) {
                 console.log(JSON.stringify(data));
                 if (err) {
                     console.log("lost");
-                    return done(err);
+                    return done(null, false, req.flash('failureMsg', "<div id=\"alertdiv\" class=\"alert\">\
+                    No User found!\
+                    </div>\
+                    "));
                 }
                 if (typeof data === "undefined") {
                     console.log("lost length");
-                    return done(null, false, req.flash('failureMsg', "<div id=\"alertdiv\" class=\"alert\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
+                    return done(null, false, req.flash('failureMsg', "<div id=\"alertdiv\" class=\"alert\">\
                     No User found!\
                     </div>\
                     "));        }
@@ -144,7 +147,7 @@ module.exports = function (passport) {
                 console.log(data);
                 console.log(data.data.password);
                 if (!(data.data.password == md5(password))) {
-                    return done(null, false, req.flash('failureMsg', "<div id=\"alertdiv\" class=\"alert\"> <span class='closebtn' onclick='this.parentElement.style.display=\"none;\"\'>&times;</span>\
+                    return done(null, false, req.flash('failureMsg', "<div id=\"alertdiv\" class=\"alert\">\
                     Wrong password!\
                     </div>\
                     "));
